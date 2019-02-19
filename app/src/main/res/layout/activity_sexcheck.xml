@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_default"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/tv_default_white"
+        android:text="环球共享欢迎您" />
+
+    <TextView
+        style="@style/tv_default_white"
+
+        android:text="" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.ant.views.RoundImageView
+            style="@style/iv_sex"
+
+            android:src="@color/color_white"
+            app:type="circle" />
+
+        <com.ant.views.RoundImageView
+            style="@style/iv_sex"
+            android:layout_width="100dp"
+            android:src="@color/color_white"
+            app:type="circle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/tv_default_white"
+            android:layout_width="@dimen/iv_sex_width"
+            android:gravity="center_horizontal"
+            android:text="lala" />
+
+        <TextView
+            style="@style/tv_default_white"
+            android:layout_width="@dimen/iv_sex_width"
+            android:gravity="center_horizontal"
+            android:text="lala00" />
+
+
+    </LinearLayout>
+
+    <Button style="@style/btn_ok_circle" />
+
+    <TextView
+        style="@style/tv_default_white"
+        android:layout_width="@dimen/iv_sex_width"
+        android:gravity="center_horizontal"
+        android:text="我在想想" />
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--**********************默认文字大小***********************-->
+    <!--默认文字大小  toolbar-->
+    <dimen name="font_toolbar_size_default">17sp</dimen>
+
+    <!--默认文字大小默认大小-->
+    <dimen name="font_size_default">13sp</dimen>
+    <dimen name="font_gray_default">12sp</dimen>
+
+    <!--**********************默认宽高***********************-->
+
+    <!--toolbar 默认高度-->
+    <dimen name="actionBarSize">48dp</dimen>
+    <!--默认边框、线条大小-->
+    <dimen name="view_border_default">0.5dp</dimen>
+    <!--默认上下间距-->
+    <dimen name="marge_top_default">10dp</dimen>
+    <dimen name="marge_bottom_default">10dp</dimen>
+    <!--默认左右间距-->
+    <dimen name="marge_left_default">20dp</dimen>
+    <!--默认左右间距-->
+    <dimen name="marge_right_default">20dp</dimen>
+    <!-- 默认圆角-->
+    <dimen name="round_default">5dp</dimen>
+    <dimen name="loging_width_default">270dp</dimen>
+    <!--默认阴影-->
+    <dimen name="shade_defaule">5dp</dimen>
+    <!--以上默认 文字 间距  勿动-->
+
+    <dimen name="et_input_default">13sp</dimen>
+
+
+</resources>

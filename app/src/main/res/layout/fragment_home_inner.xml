@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.ant.views.antBanner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/color_red"
+            android:gravity="center"
+            app:banner_layoutHeight="180dp"
+            app:banner_layoutWidth="300dp"
+            app:banner_pageChangeDuration="500"
+            app:banner_pointAutoPlayInterval="3"
+            app:banner_pointContainerBackground="#33000000"
+            app:banner_pointContainerLeftRightPadding="10dp"
+            app:banner_pointDrawable="@drawable/selector_banner_point"
+            app:banner_pointGravity="center_horizontal"
+            app:banner_pointLeftRightMargin="3dp"
+            app:banner_pointTopBottomMargin="6dp"
+            app:banner_showThree="true"
+            app:banner_tipTextColor="#FFFFFF"
+            app:banner_tipTextSize="12sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10000dp"
+            android:background="@drawable/bg_white_round"></LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

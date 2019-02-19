@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#333333</color>
+    <color name="colorPrimaryDark">#333333</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--所有dialog 半透明颜色-->
+    <color name="dialog_paren_color">#4c000000</color>
+
+    <!--****************************默认字体颜色**********************-->
+
+    <!--所有默认字体颜色 -->
+    <color name="font_black_default">#313131</color>
+    <!--所有默认字体颜色 灰色-->
+    <color name="font_gray_default">#b8b7b7</color>
+    <color name="font_yellow_default">#f6bc00</color>
+    <color name="font_9a9a9a">#9a9a9a</color>
+
+    <color name="font_gray_default_shen">#323232</color>
+    <color name="gray_press">#ffe5e5e5</color>
+    <!--输入框内默认字体颜色-->
+    <color name="font_hint_default">#a4a4a4</color>
+    <!--所有默认字体颜色 白色-->
+    <color name="font_white_default">#ffffff</color>
+    <!-- 默认蓝色字体-->
+    <color name="font_blue_default">#3fe1e3</color>
+    <!--蓝色 设置密码-->
+    <color name="font_reset_default">#f5bc00</color>
+    <!--橘色-->
+    <color name="font_oriange_default">#ff8337</color>
+
+    <color name="font_jin_default">#fbdc9b</color>
+
+    <!--按钮选择颜色-->
+    <color name="font_btn_select_default">#ff8154</color>
+    <color name="font_btn_select_select">#ff8154</color>
+
+    <!--所有默认字体颜色 蓝色-->
+    <color name="font_red_default">#e33f3f</color>
+
+    <!--***************************按钮默认颜色******************************-->
+    <!--默认边框 线颜色-->
+    <color name="border_default">#393838</color>
+
+    <!--toobar 一致的渐变颜色-->
+    <color name="toolbar_left_default">#1a1a1a</color>
+    <color name="toolbar_right_default">#1a1a1a</color>
+
+    <!--底部按钮的渐变颜色-->
+    <color name="btn_left_default">#fbdc9b</color>
+    <color name="btn_right_default">#cfa762</color>
+
+    <!--底部按钮的渐变颜色-->
+    <color name="btn_left_pressed">#000000</color>
+    <color name="btn_right_pressed">#f6bc00</color>
+
+    <!--底部按钮的渐变颜色-->
+    <color name="btn_left_enabled">#cccccc</color>
+    <color name="btn_right_enabled">#cccccc</color>
+
+
+    <!--系统背景颜色-->
+    <color name="bg_default">#101010</color>
+
+    <color name="bg_black">#000000</color>
+
+    <!--**********************以上为默认字体颜色 背景颜色 勿动-->
+    <color name="color_white">#ffffff</color>
+    <color name="color_cecece">#cecece</color>
+    <color name="color_ececec">#ececec</color>
+    <color name="color_black">#000000</color>
+    <color name="color_red">#ff0000</color>
+    <color name="color_yellow">#f6bc00</color>
+    <color name="color_red2">#313131</color>
+    <color name="tab_indicator_color">#5b93ff</color>
+    <color name="color_949497">#949497</color>
+    <color name="color_075b93ff">#4d5b93ff</color>
+    <color name="color_07c5c5c7">#4dc5c5c7</color>
+    <!--白色 百分之70透明度-->
+    <color name="color_07ffffff">#b3ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_ffc194">#ffc194</color>
+    <color name="color_ff8154">#ff8154</color>
+    <color name="color_f78c2e">#f78c2e</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_efefef">#efefef</color>
+    <color name="color_f6f6f6">#f6f6f6</color>
+
+    <!--透明度	16进制表示   使用时需要反过来使用
+    100%	00
+    95   %	0D
+    90   %	1A
+    85   %	26
+    80   %	33
+    75   %	40
+    70   %	4D
+    65   %	59
+    60   %	66
+    55   %	73
+    50   %	80
+    45   %	8C
+    40   %	99
+    35   %	A6
+    30   %	B3
+    25   %	BF
+    20   %	CC
+    15   %	D9
+    10   %	E6
+    5     %	F2
+    0     %	FF-->
+</resources>

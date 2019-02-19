@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_wdt">wdt</string>
+    <string name="app_index">Index Wallet</string>
+    <string name="app_name">环球共享</string>
+
+    <string name="srl_header_pulling">下拉可以刷新</string>
+    <string name="srl_header_refreshing">正在刷新…</string>
+    <string name="srl_header_loading">正在加载…</string>
+    <string name="srl_header_release">释放立即刷新</string>
+    <string name="srl_header_finish">刷新完成</string>
+    <string name="srl_header_failed">刷新失败</string>
+    <string name="srl_header_update">上次更新 M-d HH:mm</string>
+    <string name="srl_header_secondary">释放进入二楼</string>
+
+    <string name="srl_footer_pulling">上拉加载更多</string>
+    <string name="srl_footer_release">释放立即加载</string>
+    <string name="srl_footer_loading">正在加载…</string>
+    <string name="srl_footer_refreshing">正在刷新…</string>
+    <string name="srl_footer_finish">加载完成</string>
+    <string name="srl_footer_failed">加载失败</string>
+    <string name="srl_footer_nothing">没有更多数据了</string>
+
+    <string name="srl_content_empty">SmartRefreshLayout中没有找到内容视图。您是否忘记在xml布局文件中添加？</string>
+    <string name="srl_component_falsify" formatted="false">%s 虚假区域\n代表运行时拖动的高度【%.1fdp】 \n而不会显示任何东西</string>
+    <string name="no_oppen">暂未开放</string>
+
+
+    <!-- 以上勿动-->
+    <string name="str_phone_num">请输入手机号</string>
+    <string name="str_verify_code">请输入图形验证码</string>
+    <string name="str_phone_verify_code">请输入短信验证码</string>
+    <string name="str_email_verify_code">邮箱验证码</string>
+    <string name="str_net_err_re">网络错误，请重试</string>
+    <string name="str_chinese">中文</string>
+    <string name="str_english">英文</string>
+    <string name="str_system">系统</string>
+    <string name="language_auto">自动</string>
+    <string name="str_no_data">没有数据</string>
+    <string name="str_no_net">网络错误</string>
+    <string name="str_loading">加载中</string>
+    <string name="str_copy_success">复制成功</string>
+    <string name="str_confirm">确定</string>
+    <string name="str_cancel">取消</string>
+
+    <string name="str_exit">再按一次退出</string>
+    <string name="str_permission_request">权限请求</string>
+    <string name="str_net_err">网络错误，请重试</string>
+
+</resources>

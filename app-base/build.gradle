@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+
+//apply plugin: 'com.novoda.bintray-release'
+
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+
+
+    buildTypes {
+        release {
+            buildConfigField "boolean", "IS_DEBUG", "false"
+
+        }
+
+        debug {
+            buildConfigField "boolean", "IS_DEBUG", "true"
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    //****************************android*******************
+    implementation rootProject.ext.dependencies.supportV4
+    implementation rootProject.ext.dependencies.design
+    implementation rootProject.ext.dependencies.recyclerview
+
+    //*********************other*********************
+    //glide
+    implementation rootProject.ext.dependencies.glide
+    //gson
+    implementation rootProject.ext.dependencies.gson
+
+    //网络请求 retrofit+rxjava+rxandroid
+    implementation rootProject.ext.dependencies.retrofit2Rxjava2Adapter
+    implementation rootProject.ext.dependencies.rxjava
+    implementation rootProject.ext.dependencies.rxandroid
+    implementation rootProject.ext.dependencies.converterGson
+    //日志打印 上线时去掉
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    //butterknife
+    implementation rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+    //bugly
+//    implementation rootProject.ext.dependencies.bugly
+    //implementation 'com.android.support:multidex:1.0.1'
+    implementation rootProject.ext.dependencies.multidex
+
+    //数据库
+    implementation 'com.j256.ormlite:ormlite-android:5.0'
+    implementation 'com.j256.ormlite:ormlite-core:5.0'
+    implementation rootProject.ext.dependencies.luban
+
+
+}

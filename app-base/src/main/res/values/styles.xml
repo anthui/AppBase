@@ -1,0 +1,569 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--系统默认背景颜色-->
+        0
+        <item name="android:windowBackground">@color/bg_default</item>
+
+    </style>
+
+    <style name="AppTheme_login" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:animationDuration">0</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="AppLaunchTheme" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <!--<item name="android:windowBackground">#f00</item>-->
+    </style>
+
+
+    <!--选择按钮默认布局  禁止点击 使用外部 手动设置-->
+    <style name="cb_check_defalut">
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:background">@drawable/bg_check</item>
+        <item name="android:clickable">false</item>
+    </style>
+    <!--登录 输入状态-->
+    <style name="cb_check_defalut_login">
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">19dp</item>
+        <item name="android:layout_height">19dp</item>
+        <!--<item name="android:background">@drawable/bg_check_login</item>-->
+        <item name="android:clickable">false</item>
+    </style>
+
+    <!--************************文字样式*********************-->
+    <style name="tv_default">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <!--默认深蓝色文字-->
+    <style name="tv_default_oriange" parent="tv_default">
+        <item name="android:textColor">@color/font_oriange_default</item>
+    </style>
+    <!--默认深蓝色文字-->
+    <style name="tv_default_blue" parent="tv_default">
+        <item name="android:textColor">@color/font_blue_default</item>
+    </style>
+    <!--默认黑色文字-->
+    <style name="tv_default_black" parent="tv_default">
+        <item name="android:textColor">@color/font_black_default</item>
+    </style>
+    <!--默认灰色文字-->
+    <style name="tv_gray_default" parent="tv_default">
+        <item name="android:textColor">@color/font_gray_default</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="tv_address_default" parent="tv_default">
+        <item name="android:textColor">#989898</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="tv_gray_shen_default" parent="tv_default">
+        <item name="android:textColor">@color/font_gray_default_shen</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!--默认白色-->
+    <style name="tv_default_white" parent="tv_default">
+        <item name="android:textColor">@color/font_white_default</item>
+    </style>
+
+
+    <!--<item name="android:background">@drawable/bg_gray_round</item>-->
+    <!--<item name="android:textColor">@color/font_blue_default</item>-->
+
+    <style name="tv_shuxing">
+
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:minWidth">40dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+
+
+    </style>
+
+    <style name="tv_name_mine" parent="tv_default">
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <!--默认文本输入框-->
+    <style name="et_input_default">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/font_black_default</item>
+        <item name="android:textSize">@dimen/et_input_default</item>
+        <item name="android:textColorHint">@color/font_hint_default</item>
+        <!--<item name="android:textCursorDrawable">@drawable/bg_cursor</item>-->
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+
+    <!--手机号输入框-->
+    <style name="et_phone_default" parent="et_input_default">
+        <item name="android:inputType">phone</item>
+        <item name="android:hint">@string/str_phone_num</item>
+        <item name="android:maxLength">25</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:maxLines">1</item>
+
+    </style>
+    <!--验证码输入-->
+    <style name="et_code_default" parent="et_input_default">
+        <item name="android:inputType">number</item>
+        <item name="android:hint">@string/str_verify_code</item>
+        <item name="android:textColor">@color/color_white</item>
+
+        <item name="android:maxLength">6</item>
+        <item name="android:maxLines">1</item>
+
+    </style>
+
+    <!--密码输入框-->
+    <style name="et_pwd_default" parent="et_input_default">
+        <item name="android:maxLength">16</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:digits">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM
+        </item>
+        <item name="android:textColor">@color/color_white</item>
+
+    </style>
+
+
+    <!--确认按钮 样式-->
+    <style name="btn_ok_default" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_height">43dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:text">确认</item>
+        <!--<item name="android:textColor">@drawable/tv_btn_default</item>-->
+    </style>
+    <!--第三方 图标样式-->
+    <style name="iv_qq_style">
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:src">#f00</item>
+
+    </style>
+
+    <!--确认按钮 正方式样式-->
+    <style name="btn_ok_rectangle" parent="btn_ok_default">
+        <!--<item name="android:background">@drawable/bg_btn_select_rectanle</item>-->
+    </style>
+    <!--确认按钮 圆角模式-->
+    <style name="btn_ok_round" parent="btn_ok_default">
+        <item name="android:background">@drawable/bg_btn_select_round</item>
+        <item name="android:layout_width">@dimen/loging_width_default</item>
+    </style>
+    <!--确认按钮 圆角模式-->
+    <style name="btn_ok_round_default" parent="btn_ok_round">
+        <item name="android:layout_width">280dp</item>
+    </style>
+    <!--确认按钮 半圆 模式-->
+    <style name="btn_ok_circle" parent="btn_ok_default">
+        <item name="android:background">@drawable/bg_btn_select_oval</item>
+        <item name="android:textColor">@color/font_black_default</item>
+        <item name="android:layout_width">175dp</item>
+
+
+    </style>
+    <!--确认按钮 半圆 模式-->
+    <style name="tv_btn_oriange" parent="btn_ok_default">
+        <!--<item name="android:background">@drawable/tv_btn_oriange</item>-->
+        <item name="android:textColor">@color/font_oriange_default</item>
+
+    </style>
+
+    <!--确认按钮 半圆 模式-->
+    <style name="tv_btn_oriange_shixin">
+        <item name="android:textSize">15sp</item>
+        <!--<item name="android:background">@drawable/tv_btn_oriange_shixin</item>-->
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">28dp</item>
+    </style>
+
+    <style name="tv_btn_order_oriange">
+
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_width">85dp</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:gravity">center</item>
+        <!--<item name="android:background">@drawable/tv_btn_oriange_shixin</item>-->
+        <item name="android:textColor">@color/font_white_default</item>
+
+    </style>
+
+    <style name="dialog_style">
+        <!--parent="@android:style/Theme.Dialog"-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <!--弹框样式-->
+    <style name="NiceDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <!--弹框动画-->
+    <style name="DefaultAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/exit_anim</item>
+    </style>
+
+    <!---->
+    <style name="tab_layout_default" parent="Widget.Design.TabLayout">
+        <item name="android:textSize">17sp</item>
+        <item name="tabPaddingStart">0dp</item>
+        <item name="tabPaddingEnd">0dp</item>
+        <item name="tabIndicatorHeight">0dp</item>
+
+    </style>
+
+    <style name="tab_layout">
+        <item name="android:textSize">15sp</item>
+    </style>
+    <!--TabLayout 默认样式-->
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">40dp</item>
+        <!--指示器颜色  默认为colorAccent-->
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="ddIndicatorColor">@color/color_yellow</item>
+        <item name="android:background">@color/color_red3</item>
+        <!--系统默认间距 12dp-->
+        <!--<item name="tabPaddingStart">12dp</item>-->
+        <!--<item name="tabPaddingEnd">12dp</item>-->
+        <item name="tabMaxWidth">0dp</item>
+        <item name="ddIndicatorHeight">4dp</item>
+        <item name="tabGravity">fill</item>
+        <!--是否滚动  fixed 固定 scrollable滚动 -->
+        <item name="tabMode">fixed</item>
+        <!--背景-->
+        <item name="tabBackground">@color/color_red3</item>
+        <!--tat样式 一下为系统默认样式-->
+        <item name="tabTextAppearance">@style/tab_layout</item>
+        <!--选中颜色-->
+        <item name="tabSelectedTextColor">@color/font_yellow_default</item>
+        <!--默认文字颜色-->
+        <item name="tabTextColor">@color/font_9a9a9a</item>
+    </style>
+
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="layout_forget">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/color_white</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">@dimen/marge_left_default</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <!--注册页面 手机号-->
+    <style name="tv_forget">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <!--注册页面 中间线条-->
+    <style name="view_line_forget">
+        <item name="android:layout_marginLeft">28dp</item>
+        <item name="android:layout_width">@dimen/view_border_default</item>
+        <item name="android:layout_height">13dp</item>
+        <item name="android:background">@color/border_default</item>
+    </style>
+
+    <!--验证码 横线-->
+    <style name="view_line">
+
+        <item name="android:layout_height">@dimen/view_border_default</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/border_default</item>
+
+    </style>
+
+    <style name="view_line_set" parent="view_line">
+        <item name="android:background">#323232</item>
+    </style>
+
+    <style name="view_line_bg" parent="view_line">
+        <item name="android:background">@color/bg_default</item>
+
+
+    </style>
+    <!--竖向 线条-->
+    <style name="view_line_su">
+        <item name="android:layout_width">@dimen/view_border_default</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/border_default</item>
+
+    </style>
+    <!--输入框整体布局-->
+    <style name="layout_code">
+
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+    <!--验证码 数字-->
+    <style name="tv_code_num">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!-- 禁止滚动-->
+    <style name="recycler_view_noscro">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--右边 图标-->
+    <style name="view_goto_right">
+        <item name="android:layout_width">6dp</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:background">@mipmap/icon_togo</item>
+        <item name="android:layout_marginLeft">8dp</item>
+
+    </style>
+
+    <style name="recycler_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:overScrollMode">never</item>
+
+    </style>
+
+    <!--首页 申请代理-->
+
+
+    <!-- 设置页面 的布局-->
+    <style name="layout_setting">
+        <!--<item name="android:background">@drawable/selector_white_gray</item>-->
+        <item name="android:layout_height">43dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginRight">16dp</item>
+
+        <!--<item name="android:paddingLeft">20dp</item>-->
+        <!--<item name="android:paddingRight">20dp</item>-->
+        <item name="android:layout_marginTop">0.5dp</item>
+
+    </style>
+
+    <style name="layout_user_info" parent="layout_setting">
+
+
+    </style>
+    <!-- 设置页面 的布局-->
+    <style name="layout_mine" parent="layout_setting">
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+
+    <style name="tv_name_setting2" parent="tv_gray_default">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#666666</item>
+    </style>
+    <!--输入框 删除按钮-->
+
+
+    <style name="tv_default_jin" parent="tv_default">
+
+        <item name="android:textColor">@color/font_jin_default</item>
+
+    </style>
+
+    <style name="iv_mine">
+
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:src">#f00</item>
+    </style>
+
+    <style name="layout_newaddress">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">43dp</item>
+
+    </style>
+
+
+    <!--首页多个轮播 公用-->
+    <!--<style name="home_banner_default">-->
+    <!--<item name="android:layout_width">match_parent</item>-->
+    <!--<item name="android:layout_height">185dp</item>-->
+    <!--<item name="android:gravity">center</item>-->
+    <!--<item name="app:banner_pageChangeDuration">800</item>-->
+    <!--<item name="app:banner_pointAutoPlayInterval">3</item>-->
+    <!--<item name="app:banner_pointContainerBackground">#00000000</item>-->
+    <!--<item name="app:banner_pointContainerLeftRightPadding">3dp</item>-->
+    <!--<item name="app:banner_pointShow">true</item>-->
+    <!--<item name="app:banner_pointTopBottomMargin">6dp</item>-->
+    <!--<item name="app:banner_tipTextColor">@color/color_white</item>-->
+    <!--<item name="app:banner_showThree">false</item>-->
+    <!--<item name="app:banner_tipTextSize">12sp</item>-->
+
+
+    <style name="tv_new_address" parent="tv_default_oriange">
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_width">100dp</item>
+
+
+    </style>
+
+
+    <!--交易明细  余额支出-->
+    <style name="tv_transaction_yuer" parent="tv_default_blue">
+
+
+    </style>
+    <!--交易明细  订单号-->
+    <style name="tv_transaction_order">
+        <item name="android:textColor">@color/font_gray_default</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+
+    </style>
+
+    <style name="layout_apply">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">@dimen/marge_left_default</item>
+        <item name="android:paddingRight">@dimen/marge_left_default</item>
+
+    </style>
+
+    <style name="tv_applay" parent="tv_default_blue">
+
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_width">55dp</item>
+
+    </style>
+
+    <style name="tv_applay2" parent="tv_applay">
+
+        <item name="android:layout_width">95dp</item>
+
+    </style>
+
+    <style name="layout_order">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+
+
+    </style>
+
+    <style name="tv_order" parent="tv_default_blue">
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_weight">1</item>
+
+    </style>
+
+    <style name="tv_address_dialog" parent="tv_default_oriange">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="layout_car">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">210dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">25dp</item>
+    </style>
+
+    <style name="tv_bianji" parent="tv_default_blue">
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">63dp</item>
+        <item name="android:layout_height">match_parent</item>
+
+
+    </style>
+
+    <style name="et_bianji" parent="et_input_default">
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+    <style name="tv_message_num">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:paddingRight">3dp</item>
+        <item name="android:minWidth">16dp</item>
+        <item name="android:textColor">@color/font_white_default</item>
+        <item name="android:background">@drawable/bg_red_circle</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="tv_name_setting" parent="tv_default">
+
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#d6d6d6</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <color name="color_red3">#414141</color>
+</resources>

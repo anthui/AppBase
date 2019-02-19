@@ -1,0 +1,132 @@
+apply plugin: 'com.android.application'
+
+//引入热更新
+//apply from: 'tinker-support.gradle'
+//引入 一键分享
+//apply from: '../MobSDK.gradle'
+
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a"
+        }
+
+        //        个推账号信息
+//
+    }
+
+//*********************************************分包******************************
+    dexOptions {
+        preDexLibraries = false //分面 不能进行预加载
+        javaMaxHeapSize "4g"
+    }
+
+//*********************************************签名信息******************************
+    // 签名信息
+    signingConfigs {
+
+//mob签名测试
+        myConfig {
+            keyAlias 'ant_keystore'
+            keyPassword '123456'
+            storeFile file('wallet_android.jks')
+            storePassword '123456'
+        }
+    }
+
+    buildTypes {
+        debug {
+
+            manifestPlaceholders = [
+                    GETUI_APP_ID    : "VxRItfmd1f8k77nRTX6rI9",
+                    GETUI_APP_KEY   : "Ex073cb0AA7s8kLn9Rytm2",
+                    GETUI_APP_SECRET: "eoYyeHm1wUAfGhHScFxO38"
+            ]
+
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.myConfig
+
+        }
+        //正式编译
+        release {
+
+            manifestPlaceholders = [
+                    GETUI_APP_ID    : "VxRItfmd1f8k77nRTX6rI9",
+                    GETUI_APP_KEY   : "Ex073cb0AA7s8kLn9Rytm2",
+                    GETUI_APP_SECRET: "eoYyeHm1wUAfGhHScFxO38",
+            ]
+
+//            buildConfigField "boolean", "IS_RELEASE", "true"
+
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.myConfig
+        }
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // 3.0 存在的一些bug
+    androidTestImplementation rootProject.ext.dependencies.runner
+    androidTestImplementation rootProject.ext.dependencies.espressoCore
+    //系统自带
+    implementation rootProject.ext.dependencies.appcompatV7
+    implementation rootProject.ext.dependencies.design
+    implementation rootProject.ext.dependencies.constraintLayout
+    testImplementation rootProject.ext.dependencies.junit
+    implementation rootProject.ext.dependencies.recyclerview
+    implementation rootProject.ext.dependencies.cardview
+    //butterknife
+    implementation rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+    //网络请求 retrofit+rxjava+rxandroid
+    implementation rootProject.ext.dependencies.retrofit2Rxjava2Adapter
+    implementation rootProject.ext.dependencies.rxjava
+    //分包
+    implementation rootProject.ext.dependencies.multidex
+    //gilde
+    implementation rootProject.ext.dependencies.glide
+    implementation rootProject.ext.dependencies.getui
+    //日志打印 上线时去掉
+    implementation project(':app-base')
+    //   implementation project(':app-login')
+    //  implementation rootProject.ext.dependencies.luban
+    //  implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.2.5'
+    //implementation rootProject.ext.dependencies.luban
+    //  implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+    // implementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    //   implementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+//    implementation project(':gsyVideo')
+//    implementation 'com.amap.api:3dmap:6.6.0'
+//    implementation 'com.amap.api:location:4.4.0'
+//    implementation files('libs/alipaySdk-20180601.jar')
+//    implementation files('libs/libammsdk.jar')
+}
+
+//apply plugin: 'com.google.gms.google-services'
+
+repositories {
+    mavenCentral()
+}
+
+
