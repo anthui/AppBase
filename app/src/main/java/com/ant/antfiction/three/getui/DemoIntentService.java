@@ -2,7 +2,7 @@ package com.ant.antfiction.three.getui;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.ant.antfiction.base.http.HttpManager;
 import com.ant.base.db.SpManager;

@@ -10,8 +10,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -33,7 +33,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 import static android.content.Context.BIND_AUTO_CREATE;
-import static butterknife.internal.Utils.arrayOf;
 
 
 public class NewVersionDialog extends BaseDialog {
@@ -107,7 +106,7 @@ public class NewVersionDialog extends BaseDialog {
             if (!b) {
                 LogUtil.e("==============================000");
                 //8.0后安装需要 手动允许权限
-                ActivityCompat.requestPermissions(mActivity, arrayOf(Manifest.permission.REQUEST_INSTALL_PACKAGES),
+                ActivityCompat.requestPermissions(mActivity,  new String[]{Manifest.permission.REQUEST_INSTALL_PACKAGES},
                         200);
             }
         }

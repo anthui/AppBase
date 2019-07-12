@@ -28,7 +28,7 @@ import com.ant.base.R;
  */
 
 
-public class GradientTextView extends android.support.v7.widget.AppCompatTextView {
+public class GradientTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     private LinearGradient mLinearGradient;
     private Paint mPaint;

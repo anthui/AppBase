@@ -2,7 +2,7 @@ package com.ant.antfiction.utils.version;
 
 
 import android.content.Context;
-import android.support.v4.app.FragmentManager;
+import androidx.fragment.app.FragmentManager;
 
 import com.ant.antfiction.R;
 import com.ant.antfiction.base.http.HttpManager;

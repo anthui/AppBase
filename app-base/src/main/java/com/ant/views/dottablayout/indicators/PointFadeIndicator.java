@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.ColorInt;
+import androidx.annotation.ColorInt;
 import android.view.animation.LinearInterpolator;
 
 import com.ant.views.dottablayout.DotTabLayout;

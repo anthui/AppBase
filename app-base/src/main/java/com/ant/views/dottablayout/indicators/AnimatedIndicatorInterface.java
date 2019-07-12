@@ -1,7 +1,7 @@
 package com.ant.views.dottablayout.indicators;
 
 import android.graphics.Canvas;
-import android.support.annotation.ColorInt;
+import androidx.annotation.ColorInt;
 
 /**
  * The interface you should implement for creating custom AnimatedIndicators.

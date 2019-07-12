@@ -13,7 +13,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
+import androidx.core.content.FileProvider;
 import android.util.DisplayMetrics;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;

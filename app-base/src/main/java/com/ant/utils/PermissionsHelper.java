@@ -11,18 +11,17 @@ package com.ant.utils;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 
-import com.ant.base.BaseActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.ant.dialog.PermissionDialog;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static butterknife.internal.Utils.arrayOf;
 
 /**
  * 权限工具类
@@ -60,7 +59,7 @@ public class PermissionsHelper {
                 LogUtil.e("==============================000");
                 //  ActivityCompat.requestPermissions(mActivity, new String[]{Manifest.permission.REQUEST_INSTALL_PACKAGES}, mAPKInstallsCode);
 
-                ActivityCompat.requestPermissions(mActivity, arrayOf(Manifest.permission.REQUEST_INSTALL_PACKAGES),
+                ActivityCompat.requestPermissions(mActivity, new String[]{Manifest.permission.REQUEST_INSTALL_PACKAGES},
                         mAPKInstallsCode);
 
 

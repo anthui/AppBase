@@ -12,7 +12,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
 
@@ -51,10 +51,12 @@ dependencies {
     implementation rootProject.ext.dependencies.rxandroid
     implementation rootProject.ext.dependencies.converterGson
     //日志打印 上线时去掉
-    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     //butterknife
     implementation rootProject.ext.dependencies.butterknife
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+
+
     //bugly
 //    implementation rootProject.ext.dependencies.bugly
     //implementation 'com.android.support:multidex:1.0.1'

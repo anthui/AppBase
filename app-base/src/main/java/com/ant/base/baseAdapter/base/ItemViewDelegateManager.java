@@ -1,6 +1,6 @@
 package com.ant.base.baseAdapter.base;
 
-import android.support.v4.util.SparseArrayCompat;
+import androidx.collection.SparseArrayCompat;
 
 
 public class ItemViewDelegateManager<T>

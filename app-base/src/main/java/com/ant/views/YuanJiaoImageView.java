@@ -18,7 +18,7 @@ import com.ant.base.R;
  * creation date：2018/2/9
  * describe：
  */
-public class YuanJiaoImageView extends android.support.v7.widget.AppCompatImageView {
+public class YuanJiaoImageView extends androidx.appcompat.widget.AppCompatImageView {
     /**
      * 圆形模式
      */

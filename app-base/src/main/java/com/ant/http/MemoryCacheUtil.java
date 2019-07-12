@@ -1,6 +1,6 @@
 package com.ant.http;
 
-import android.support.v4.util.LruCache;
+import androidx.collection.LruCache;
 
 /**
  * 内存缓存

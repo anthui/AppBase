@@ -1,6 +1,6 @@
 package com.ant.antfiction.home.fragment;
 
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 
 import com.ant.antfiction.R;

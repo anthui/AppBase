@@ -32,7 +32,7 @@ import com.ant.base.R;
  * creation date：2018/2/9
  * describe： 圆角图片
  */
-public class RoundImageView extends android.support.v7.widget.AppCompatImageView {
+public class RoundImageView extends androidx.appcompat.widget.AppCompatImageView {
     /**
      * 圆形模式
      */

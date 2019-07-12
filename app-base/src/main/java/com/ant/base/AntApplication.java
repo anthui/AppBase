@@ -3,7 +3,7 @@ package com.ant.base;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.support.multidex.MultiDex;
+import androidx.multidex.MultiDex;
 
 import com.ant.utils.language.LocalManageUtil;
 
