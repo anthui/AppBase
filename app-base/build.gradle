@@ -9,12 +9,11 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
 
 
     buildTypes {
@@ -36,36 +35,39 @@ dependencies {
 
     //****************************android*******************
     implementation rootProject.ext.dependencies.supportV4
-    implementation rootProject.ext.dependencies.design
-    implementation rootProject.ext.dependencies.recyclerview
+    api rootProject.ext.dependencies.design
+    api rootProject.ext.dependencies.recyclerview
+    api rootProject.ext.dependencies.multidex
+    api rootProject.ext.dependencies.constraintLayout
+
+
+    //**************************网络请求 okHttp+retrofit+rxJava+rxAndroid*************************
+    //RxAndroid适配器
+    api rootProject.ext.dependencies.retrofit2Rxjava2Adapter
+    //RxAndroid
+    api rootProject.ext.dependencies.rxandroid
+    //Gson转换
+    api rootProject.ext.dependencies.converterGson
+    //OkHttp3
+    implementation rootProject.ext.dependencies.okHttp3
+    //OKHttp3日志打印
+    implementation rootProject.ext.dependencies.okHttp3Logging
+    //**************************ButterKnife*************************
+    //butterknife
+    api rootProject.ext.dependencies.butterknife
+//    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+
+
+    implementation rootProject.ext.dependencies.luban
+
 
     //*********************other*********************
     //glide
-    implementation rootProject.ext.dependencies.glide
+    api rootProject.ext.dependencies.glide
+//    annotationProcessor rootProject.ext.dependencies.glideCompiler
     //gson
     implementation rootProject.ext.dependencies.gson
-
-    //网络请求 retrofit+rxjava+rxandroid
-    implementation rootProject.ext.dependencies.retrofit2Rxjava2Adapter
-    implementation rootProject.ext.dependencies.rxjava
-    implementation rootProject.ext.dependencies.rxandroid
-    implementation rootProject.ext.dependencies.converterGson
-    //日志打印 上线时去掉
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-    //butterknife
-    implementation rootProject.ext.dependencies.butterknife
-    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
-
-
-    //bugly
-//    implementation rootProject.ext.dependencies.bugly
-    //implementation 'com.android.support:multidex:1.0.1'
-    implementation rootProject.ext.dependencies.multidex
-
-    //数据库
-    implementation 'com.j256.ormlite:ormlite-android:5.0'
-    implementation 'com.j256.ormlite:ormlite-core:5.0'
-    implementation rootProject.ext.dependencies.luban
+    api rootProject.ext.dependencies.ormlite
 
 
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/layout_toolbar" />
+
+    <com.ant.app_views.bottomtabbar.BottomTabBar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/bottom_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:tab_divider_height="2dp"
+        app:tab_font_size="12px"
+        app:tab_height="60dp"
+        app:tab_img_font_padding="3dp"
+        app:tab_img_height="23dp"
+        app:tab_img_width="27dp"
+        app:tab_isshow_divider="false"
+        app:tab_selected_color="@color/font_jin_default"
+        app:tab_unselected_color="@color/font_gray_default" />
+
+</LinearLayout>

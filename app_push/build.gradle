@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+
+
+        debug {
+            manifestPlaceholders = [
+                    GETUI_APP_ID    : "VxRItfmd1f8k77nRTX6rI9",
+                    GETUI_APP_KEY   : "Ex073cb0AA7s8kLn9Rytm2",
+                    GETUI_APP_SECRET: "eoYyeHm1wUAfGhHScFxO38",
+            ]
+        }
+
+        release {
+            manifestPlaceholders = [
+                    GETUI_APP_ID    : "VxRItfmd1f8k77nRTX6rI9",
+                    GETUI_APP_KEY   : "Ex073cb0AA7s8kLn9Rytm2",
+                    GETUI_APP_SECRET: "eoYyeHm1wUAfGhHScFxO38",
+            ]
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+//推送依赖，这里只时作为存放代码，不做其他操作
+dependencies {
+    //implementation rootProject.ext.dependencies.recyclerview
+    //  implementation rootProject.ext.dependencies.design
+    implementation rootProject.ext.dependencies.getui
+
+}

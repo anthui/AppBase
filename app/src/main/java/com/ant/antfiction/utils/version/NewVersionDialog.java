@@ -17,15 +17,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ant.antfiction.R;
-import com.ant.base.db.SpManager;
-import com.ant.base.nicedialog.BaseDialog;
-import com.ant.base.version.DownLoadService;
-import com.ant.utils.LogUtil;
-import com.ant.utils.PermissionsHelper;
-import com.ant.utils.StringUtil;
-import com.ant.utils.ToastUtil;
-import com.ant.views.ProgressButton;
+import com.ant.app_database.sp.SpManager;
+import com.ant.app_base.baseDialog.BaseDialog;
+import com.ant.app_base.version.DownLoadService;
+import com.ant.app_home.R;
+import com.ant.app_utils.LogUtil;
+import com.ant.app_utils.PermissionsHelper;
+import com.ant.app_utils.StringUtil;
+import com.ant.app_utils.ToastUtil;
+import com.ant.app_views.ProgressButton;
 
 import java.io.File;
 
@@ -204,15 +204,13 @@ public class NewVersionDialog extends BaseDialog {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
 
     }
 
     @Override
-    protected void initComponents(View mView) {
-        setTextView(bean);
+    public void initComponents(Bundle savedInstanceState, View rootView) {
 
-//        permissionsHelper = new PermissionsHelper(mActivity);
     }
 
 

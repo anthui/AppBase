@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ant.app_views.dottablayout.DotTabLayout
+        android:id="@+id/dotTab_layout"
+        style="@style/MyCustomTabLayout"
+        android:layout_marginTop="40dp" />
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/dotTab_layout" />
+
+
+    <com.ant.app_views.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/empty_view" />
+
+
+</RelativeLayout>

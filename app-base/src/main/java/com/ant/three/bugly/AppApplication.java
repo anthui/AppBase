@@ -4,7 +4,7 @@
 //import com.tencent.tinker.loader.shareutil.ShareConstants;
 //
 ///**
-// * copyright：haoxin
+// * copyright：""
 // * author：anthui
 // * Version：1.0
 // * creation date：2018/2/10

@@ -5,29 +5,29 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/realtabcontent"
+        android:id="@+id/home_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1" />
-
+    <!--分割线 分割线高度，这里不控制-->
     <View
-        android:id="@+id/split"
+        android:id="@+id/home_split"
         android:layout_width="match_parent"
         android:layout_height="1px" />
 
-    <com.ant.views.bottomtabbar.custom.CustomFragmentTabHost
+
+    <!--底部导航 fragmentTabHost  宽高由外部控制-->
+    <com.ant.app_views.bottomtabbar.custom.CustomFragmentTabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_height="50dp"/>
 
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="0" />
+        <!--<FrameLayout-->
+            <!--android:id="@android:id/tabcontent"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="0" />-->
 
-    </com.ant.views.bottomtabbar.custom.CustomFragmentTabHost>
 
 
 </LinearLayout>

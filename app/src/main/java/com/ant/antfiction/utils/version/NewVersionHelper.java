@@ -4,15 +4,15 @@ package com.ant.antfiction.utils.version;
 import android.content.Context;
 import androidx.fragment.app.FragmentManager;
 
-import com.ant.antfiction.R;
-import com.ant.antfiction.base.http.HttpManager;
-import com.ant.http.Bean.ErrBean;
-import com.ant.http.Bean.TokenInfoBean;
-import com.ant.http.listener.OnHttpRequestListener;
-import com.ant.utils.AppHelper;
-import com.ant.utils.PermissionsHelper;
-import com.ant.utils.ToastUtil;
-import com.ant.views.EmptyView;
+import com.ant.app_base.http.HttpManager;
+import com.ant.app_home.R;
+import com.ant.app_http.Bean.ErrBean;
+import com.ant.app_http.Bean.TokenInfoBean;
+import com.ant.app_http.listener.OnHttpRequestListener;
+import com.ant.app_utils.AppHelper;
+import com.ant.app_utils.PermissionsHelper;
+import com.ant.app_utils.ToastUtil;
+import com.ant.app_views.EmptyView;
 
 
 /**

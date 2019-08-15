@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <!--黑色背景颜色-->
+    <item android:drawable="@android:color/white" />
+    <!-- 产品logo-->
+    <item
+        android:width="30dp"
+        android:height="30dp"
+        android:gravity="top">
+        <bitmap android:src="@mipmap/icon_checked"  />
+
+    </item>
+    <!-- 右上角的图标元素 -->
+    <!--<item android:gravity="top|right">-->
+    <!--<bitmap android:src="@mipmap/icon_yindao_bottom" />-->
+    <!--</item>-->
+    <!--最下面的文字-->
+    <item
+        android:bottom="50dp"
+        android:gravity="bottom|center">
+        <bitmap android:src="@mipmap/icon_checked" />
+    </item>
+</layer-list>

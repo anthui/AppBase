@@ -1,0 +1,15 @@
+<resources>
+
+    <!--启动页主题-->
+    <style name="AppLaunchTheme" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:animationDuration">0</item>
+
+        <item name="android:windowBackground">@drawable/bg_launcher</item>
+        <!--禁止预览窗口-->
+        <item name="android:windowDisablePreview">true</item>
+
+    </style>
+
+
+</resources>

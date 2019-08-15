@@ -1,28 +1,29 @@
 <resources>
 
-    <!-- Base application theme. -->
+
+    <!--系统默认主题-->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!--系统默认背景颜色-->
-        0
+        <!--默认沉浸，状态栏为透明-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--设置背景颜色-->
         <item name="android:windowBackground">@color/bg_default</item>
-
     </style>
 
-    <style name="AppTheme_login" parent="AppTheme">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:animationDuration">0</item>
-        <item name="android:windowDisablePreview">true</item>
-    </style>
 
-    <style name="AppLaunchTheme" parent="AppTheme">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
-        <!--<item name="android:windowBackground">#f00</item>-->
-    </style>
+    <!--&lt;!&ndash;启动页主题&ndash;&gt;-->
+    <!--<style name="AppLaunchTheme" parent="AppTheme">-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--<item name="android:animationDuration">0</item>-->
+
+        <!--<item name="android:windowBackground">@drawable/bg_launcher</item>-->
+        <!--&lt;!&ndash;禁止预览窗口&ndash;&gt;-->
+        <!--<item name="android:windowDisablePreview">true</item>-->
+
+    <!--</style>-->
 
 
     <!--选择按钮默认布局  禁止点击 使用外部 手动设置-->
@@ -263,27 +264,32 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minHeight">40dp</item>
-        <!--指示器颜色  默认为colorAccent-->
-        <item name="tabIndicatorColor">?attr/colorAccent</item>
-        <item name="tabIndicatorHeight">2dp</item>
-        <item name="ddIndicatorColor">@color/color_yellow</item>
+        <!--指示器颜色  默认为白色-->
+        <item name="tabIndicatorColor">@color/color_yellow</item>
+        <!--指示器高度  默认4dp-->
+        <item name="tabIndicatorHeight">4dp</item>
+
+        <!--tabLayout的背景颜色-->
         <item name="android:background">@color/color_red3</item>
         <!--系统默认间距 12dp-->
-        <!--<item name="tabPaddingStart">12dp</item>-->
-        <!--<item name="tabPaddingEnd">12dp</item>-->
+        <!--<item name="tabPaddingStart">0dp</item>-->
+        <!--<item name="tabPaddingEnd">0dp</item>-->
         <item name="tabMaxWidth">0dp</item>
-        <item name="ddIndicatorHeight">4dp</item>
+        <!--tabLayout fill占满,平分宽度，tab设置最大宽度后，center居中，tab -->
         <item name="tabGravity">fill</item>
-        <!--是否滚动  fixed 固定 scrollable滚动 -->
-        <item name="tabMode">fixed</item>
-        <!--背景-->
-        <item name="tabBackground">@color/color_red3</item>
-        <!--tat样式 一下为系统默认样式-->
+        <!--tabLayout占满宽带、滚动  fixed 固定 scrollable滚动 -->
+        <item name="tabMode">scrollable</item>
+        <!--tab背景-->
+        <!--<item name="tabBackground">@color/color_red</item>-->
+        <!--tab文字样式，可修改 文字颜色、大小-->
         <item name="tabTextAppearance">@style/tab_layout</item>
         <!--选中颜色-->
         <item name="tabSelectedTextColor">@color/font_yellow_default</item>
         <!--默认文字颜色-->
         <item name="tabTextColor">@color/font_9a9a9a</item>
+
+        <!--指示器样式 dachshund默认-->
+        <item name="ddAnimatedIndicator">lineMove</item>
     </style>
 
     <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
@@ -543,20 +549,6 @@
         <item name="android:layout_marginLeft">15dp</item>
     </style>
 
-    <style name="tv_message_num">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">16dp</item>
-        <item name="android:paddingLeft">3dp</item>
-        <item name="android:paddingRight">3dp</item>
-        <item name="android:minWidth">16dp</item>
-        <item name="android:textColor">@color/font_white_default</item>
-        <item name="android:background">@drawable/bg_red_circle</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">10sp</item>
-        <item name="android:includeFontPadding">false</item>
-        <item name="android:layout_marginTop">5dp</item>
-        <item name="android:visibility">gone</item>
-    </style>
 
     <style name="tv_name_setting" parent="tv_default">
 

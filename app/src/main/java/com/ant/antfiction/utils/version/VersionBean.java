@@ -1,6 +1,6 @@
 package com.ant.antfiction.utils.version;
 
-import com.ant.base.BaseBean;
+import com.ant.app_base.BaseBean;
 
 /**
  * copyright：

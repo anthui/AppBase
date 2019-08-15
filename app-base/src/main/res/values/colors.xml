@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#333333</color>
-    <color name="colorPrimaryDark">#333333</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--<color name="colorPrimary">#333333</color>-->
+    <!--<color name="colorPrimaryDark">#333333</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
     <!--所有dialog 半透明颜色-->
     <color name="dialog_paren_color">#4c000000</color>
 
@@ -42,8 +46,8 @@
     <color name="border_default">#393838</color>
 
     <!--toobar 一致的渐变颜色-->
-    <color name="toolbar_left_default">#1a1a1a</color>
-    <color name="toolbar_right_default">#1a1a1a</color>
+    <color name="toolbar_left_default">#000000</color>
+    <color name="toolbar_right_default">#f6bc00</color>
 
     <!--底部按钮的渐变颜色-->
     <color name="btn_left_default">#fbdc9b</color>
@@ -59,7 +63,7 @@
 
 
     <!--系统背景颜色-->
-    <color name="bg_default">#101010</color>
+    <color name="bg_default">#f5f5f5</color>
 
     <color name="bg_black">#000000</color>
 

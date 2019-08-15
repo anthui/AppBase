@@ -2,36 +2,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_horizontal"
+    android:clipChildren="false"
+    android:gravity="center"
     android:orientation="vertical">
 
-
+    <!--这里的宽高 不起做-->
+    <!--剧中-->
     <RelativeLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/tab_item_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true" />
 
         <TextView
             android:id="@+id/tv_message"
-            style="@style/tv_message_num"
-            android:layout_marginLeft="-14dp"
-            android:layout_toRightOf="@id/tab_item_iv" />
-
-        <TextView
-            android:id="@+id/tab_item_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tab_item_iv"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center" />
+            style="@style/tv_default_white"
+            android:layout_height="16dp"
+            android:layout_alignTop="@id/tab_item_iv"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="-4dp"
+            android:layout_toEndOf="@id/tab_item_iv"
+            android:background="@drawable/bg_red_circle"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:textSize="10sp"
+            android:visibility="gone" />
 
     </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tab_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 
 
 </LinearLayout>
