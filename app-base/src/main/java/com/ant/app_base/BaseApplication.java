@@ -65,7 +65,6 @@ public  class BaseApplication extends Application {
     private void registerException() {
         AppExceptionHelper.getInstance().register(this);
 
-
     }
 
 }

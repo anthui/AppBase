@@ -42,8 +42,8 @@ public class HttpManager extends HttpBaseAction {
      * 添加公共参数 头部
      */
     @Override
-    protected void addHead(Request.Builder builder) {
-        super.addHead(builder);
+    protected void addHeads(Request.Builder builder) {
+        super.addHeads(builder);
         UserBean httpUserBean = UserSp.getUserBean();
         if (httpUserBean == null) {
             return;

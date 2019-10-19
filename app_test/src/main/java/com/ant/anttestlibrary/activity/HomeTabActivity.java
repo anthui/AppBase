@@ -1,8 +1,10 @@
 package com.ant.anttestlibrary.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,6 +16,7 @@ import com.ant.anttestlibrary.fragment.HomeRefreshFragment;
 import com.ant.anttestlibrary.fragment.HomeTabFragment;
 import com.ant.anttestlibrary.fragment.TabLayoutFragment;
 import com.ant.app_base.BaseActivity;
+import com.ant.app_utils.LogUtil;
 import com.ant.app_utils.PermissionsHelper;
 import com.ant.app_views.bottomtabbar.BottomTabBar;
 
@@ -53,6 +56,13 @@ public class HomeTabActivity extends BaseActivity {
             @Override
             public void onTabChange(int position, String name, View view) {
                 bottomTabBar.setBottomBarNum(position, 12);
+
+                if (position == 3) {
+                    startActivity(new Intent(mActivity, HomeTabActivity.class));
+                    return;
+
+                }
+                startActivity(new Intent(mActivity, LauncherActivity.class));
             }
         });
 
@@ -68,11 +78,11 @@ public class HomeTabActivity extends BaseActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
-
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            exit();
-            return true;
-        }
+//
+//        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+//            exit();
+//            return true;
+//        }
         return super.onKeyDown(keyCode, event);
     }
 
@@ -95,7 +105,26 @@ public class HomeTabActivity extends BaseActivity {
             //启动线程 操作关闭
 //            System.exit(0);
         }
+
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        Intent intent = new Intent(mActivity, MyService.class);
+        startService(intent);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        LogUtil.e("newintent===" + this.hashCode() + "===================================================");
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+
+    }
 }

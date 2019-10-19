@@ -2,6 +2,7 @@ package com.ant.app_http;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
@@ -56,6 +57,7 @@ public class CacheInterceptor implements Interceptor {
                     .build();
         }
         return response;
+
     }
 
     public boolean isNetworkAvailable() {

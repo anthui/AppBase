@@ -21,6 +21,7 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTabHost;
 
 import com.ant.app_base.R;
 import com.ant.app_views.bottomtabbar.custom.CustomFragmentTabHost;

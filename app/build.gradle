@@ -6,7 +6,9 @@ apply plugin: 'com.android.application'
 //apply from: '../MobSDK.gradle'
 
 
+
 android {
+
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
@@ -33,6 +35,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 
 //*********************************************分包******************************
     dexOptions {
@@ -71,8 +74,35 @@ android {
             signingConfig signingConfigs.myConfig
         }
     }
+    flavorDimensions "default"
+    productFlavors {
+        //开发环境
+        develop {
+            applicationIdSuffix ".dev"       //applicationId "com.allsunny.packagedemo.dev"
+            buildConfigField("int", "ENV_TYPE", "1")
+            manifestPlaceholders = ["app_name": "开发环境", "app_launcher_icon": "@mipmap/ic_launcher_dev"]
+        }
 
+        //生产环境
+        product {
+            buildConfigField("int", "ENV_TYPE", "2")
+            manifestPlaceholders = ["app_name": "生产环境", "app_launcher_icon": "@mipmap/ic_launcher"]
+        }
+    }
 
+//   打包文件信息
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def buildName = "app"
+            def type = variant.buildType.name
+            def releaseApkName = buildName + '_' + type + "_V" + versionName + '_' + releaseTime() + '.apk'
+            outputFileName = releaseApkName
+        }
+    }
+}
+//打包时间 方法
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
 
 dependencies {

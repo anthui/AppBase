@@ -47,6 +47,6 @@
                  4、在代码中手动设置 第一个View的头部间距 添加paddingTop，BaseFragment就是这么实现的
     2、BaseActivity升级
     3、AppExceptionHelper升级--错误日志---------application中初始化就可
-                1、本地保存错误崩溃日志文件，如果由后台，可能该文件 上传
+                1、本地保存错误崩溃日志文件，如果由后台，可将该文件 上传
                 2、可借助友盟等第三方进行错误日志统计
     4、新增BaseViewInterFace接口，约束BaseActivity、BaseFragment、BaseDialog方法

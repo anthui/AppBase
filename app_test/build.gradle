@@ -31,6 +31,28 @@ android {
         preDexLibraries = false //分面 不能进行预加载
         javaMaxHeapSize "4g"
     }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name.equals('release')) {
+            variant.outputs.all { output ->
+                def buildName = "app_"
+                def type = variant.buildType.name
+                def releaseApkName = buildName + '_' + type + "_" + versionName + '_' + releaseTime() + '.apk'
+                outputFileName = releaseApkName
+            }
+        } else {
+            variant.outputs.all { output ->
+                def buildName = "com.david.smarthome"
+                def releaseApkName = buildName + '_' + "test" + "_" + versionName + '_' + releaseTime() + '.apk'
+                outputFileName = releaseApkName
+            }
+        }
+    }
+
+
+}
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
 
 dependencies {
@@ -51,6 +73,7 @@ dependencies {
 //    implementation rootProject.ext.dependencies.rxandroid
 //    implementation rootProject.ext.dependencies.retrofit2Rxjava2Adapter
 //    implementation 'com.j256.ormlite:ormlite-android:5.1'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-beta05'
 
 
 //    implementation rootProject.ext.dependencies.multidex

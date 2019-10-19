@@ -4,9 +4,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.ant.app_views.EmptyView
-        android:id="@+id/empty_view"
+
+    <com.ant.anttestlibrary.TouncherLayout
+        android:id="@+id/view_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+
+        android:layout_weight="1"
+        android:background="#ff00ff">
+
+        <com.ant.anttestlibrary.TouncherLayout
+            android:id="@+id/view_home2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="100dp"
+
+            android:background="@color/font_gray_default">
+
+
+            <com.ant.anttestlibrary.TouncherView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+
+                android:layout_marginLeft="50dp"
+                android:background="@color/color_red" />
+
+
+        </com.ant.anttestlibrary.TouncherLayout>
+
+    </com.ant.anttestlibrary.TouncherLayout>
+
+
+    <com.ant.anttestlibrary.TouncherLayout
+        android:id="@+id/view_home3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/gray_press" />
 
 </LinearLayout>

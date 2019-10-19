@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.RectF;
+import android.icu.util.Measure;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -240,7 +241,6 @@ public class SearchView extends View {
     private void drawSearch(Canvas canvas) {
 
         mPaint.setColor(Color.WHITE);
-
 
         //画板移动至中间
         canvas.translate(mViewWidth / 2, mViewHeight / 2);

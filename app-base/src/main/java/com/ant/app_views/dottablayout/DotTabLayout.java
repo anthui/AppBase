@@ -73,7 +73,7 @@ public class DotTabLayout extends TabLayout implements ViewPager.OnPageChangeLis
     public DotTabLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         //两种方式 忽略原始的指示器
-//        super.setSelectedTabIndicatorHeight(0);
+//       super.setSelectedTabIndicatorHeight(0);
         super.setSelectedTabIndicatorColor(Color.TRANSPARENT);
         tabStrip = (LinearLayout) super.getChildAt(0);
 

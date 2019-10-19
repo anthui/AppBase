@@ -22,6 +22,9 @@
             </intent-filter>
 
         </activity>
+        <!--　   &lt;!&ndash;<meta-data&ndash;&gt;-->
+        <!--&lt;!&ndash;android:name="CHANNEL"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:value="${CHANNEL}" />&ndash;&gt;-->
 
 
     </application>

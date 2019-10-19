@@ -13,7 +13,8 @@ import com.ant.app_base.config.AppBaseConfig;
 public class LogUtil {
 
     public static final String TAG = "usdd";//标记
-    public static final boolean DEBUG = AppBaseConfig.isDebug;;//是否处于debug,打包时得设置为false
+    public static final boolean DEBUG = AppBaseConfig.isDebug;
+    ;//是否处于debug,打包时得设置为false
 
     private LogUtil() {
     }
@@ -118,8 +119,10 @@ public class LogUtil {
      * @param msg The message you would like logged.
      */
     public static void e(String msg) {
-        if (DEBUG)
-            android.util.Log.e(TAG, buildMessage(msg));
+        if (DEBUG) {
+            e(TAG, msg);
+        }
+//            android.util.Log.e(TAG, buildMessage(msg));
     }
 
     /**
@@ -135,7 +138,11 @@ public class LogUtil {
 
     public static void e(String TAG, String msg) {
         if (DEBUG)
-            android.util.Log.e(TAG, buildMessage(msg));
+            if (msg.contains("哈哈")) {
+                return;
+            }
+
+        android.util.Log.e(TAG, buildMessage(msg));
     }
 
     /**

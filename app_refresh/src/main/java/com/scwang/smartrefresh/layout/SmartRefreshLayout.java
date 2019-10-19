@@ -123,11 +123,11 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
     protected boolean mEnableFooterTranslationContent = true;//是否启用内容视图拖动效果
     protected boolean mEnableFooterFollowWhenNoMoreData = false;//是否在全部加载结束之后Footer跟随内容 1.0.4-6
     protected boolean mEnablePreviewInEditMode = true;//是否在编辑模式下开启预览功能
-    protected boolean mEnableOverScrollBounce = true;//是否启用越界回弹
+    protected boolean mEnableOverScrollBounce = false;//是否启用越界回弹
     protected boolean mEnableOverScrollDrag = false;//是否启用越界拖动（仿苹果效果）1.0.4-6
-    protected boolean mEnableAutoLoadMore = true;//是否在列表滚动到底部时自动加载更多
+    protected boolean mEnableAutoLoadMore = false;//是否在列表滚动到底部时自动加载更多
     protected boolean mEnablePureScrollMode = false;//是否开启纯滚动模式
-    protected boolean mEnableScrollContentWhenLoaded = true;//是否在加载更多完成之后滚动内容显示新数据
+    protected boolean mEnableScrollContentWhenLoaded = false;//是否在加载更多完成之后滚动内容显示新数据
     protected boolean mEnableScrollContentWhenRefreshed = true;//是否在刷新完成之后滚动内容显示新数据
     protected boolean mEnableLoadMoreWhenContentNotFull = false;//在内容不满一页的时候，是否可以上拉加载更多
     protected boolean mEnableNestedScrolling = true;//是否启用潜逃滚动功能
@@ -3895,5 +3895,23 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
                 finishLoadMore();
             }
         }
+    }
+
+
+    /**
+     * 小视频 详情分页加载时，对应的参数配置
+     * 需要修改原始、默认的参数
+     */
+    public void setSmallVideoConfig() {
+
+        //不需要刷新
+        setEnableRefresh(false);
+        //到底部时，是否自动加载
+        setEnableAutoLoadMore(false);
+        //是否采用越界回弹
+        setEnableOverScrollBounce(false);
+        //是否直接显示数据
+        setEnableScrollContentWhenLoaded(false);
+
     }
 }

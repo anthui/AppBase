@@ -108,6 +108,7 @@ public class AppExceptionHelper implements UncaughtExceptionHandler {
             public void run() {
                 Looper.prepare();
                 Toast.makeText(mContext, "程序开小差了，将会在2秒后退出", Toast.LENGTH_SHORT).show();//使用Toast来显示异常信息
+                System.exit(0);
                 Looper.loop();
             }
         }.start();

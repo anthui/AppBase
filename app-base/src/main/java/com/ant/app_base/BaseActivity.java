@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.ant.app_utils.LogUtil;
+import com.ant.app_utils.StringUtil;
 import com.ant.app_utils.ToastUtil;
 
 import butterknife.ButterKnife;
@@ -130,6 +131,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
 
     public void loge(String msg) {
+
         LogUtil.e(getClass().getSimpleName(), msg);
 
     }

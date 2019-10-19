@@ -64,7 +64,7 @@ public abstract class HttpBaseAction {
         builder.interceptors().add(new CookiesInterceptor() {
             @Override
             public void addHead(Request.Builder builder) {
-                addHead(builder);
+                addHeads(builder);
             }
         });
 
@@ -82,7 +82,7 @@ public abstract class HttpBaseAction {
     /**
      * 添加公共参数
      */
-    protected void addHead(Request.Builder builder) {
+    protected void addHeads(Request.Builder builder) {
     }
 
     /**

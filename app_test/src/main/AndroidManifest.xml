@@ -13,7 +13,13 @@
 
         tools:replace="android:icon, android:label,android:theme">
 
-        <activity android:name="com.ant.anttestlibrary.activity.HomeTabActivity">
+        <activity
+            android:name="com.ant.anttestlibrary.activity.HomeTabActivity"
+            android:launchMode="singleInstance">
+
+
+        </activity>
+        <activity android:name=".activity.DashboardActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +28,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.PagerSnapHelperActivity2">
+
+
+        </activity>
+
+        <activity
+            android:name=".activity.NewIntenActivity"
+            android:launchMode="singleInstance" />
 
         <activity
             android:name=".activity.LauncherActivity"
