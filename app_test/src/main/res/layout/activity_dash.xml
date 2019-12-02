@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -11,7 +12,101 @@
         android:id="@+id/dash_view"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:visibility="gone" />
+
+    <com.ant.anttestlibrary.view.DashboardView3
+        android:id="@+id/dash_view2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="30dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        style="@style/tv_default_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textSize="20sp" />
+
+
+    <com.ant.anttestlibrary.view.BMIView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal" />
+
+
+    <com.ant.anttestlibrary.view.BMIView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:background="#22000000" />
+
+    <com.ant.anttestlibrary.view.NewBmiView
+        android:id="@+id/bmiview"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_red"
+        android:visibility="gone" />
+
+
+    <com.ant.anttestlibrary.BMIView
+        android:id="@+id/BMIView1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginEnd="@dimen/activity_margin"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bmi_bg"
+        android:visibility="gone"
+        app:currentVal="100"
+        app:maxNormal="400"
+        app:maxVal="600"
+        app:minNormal="200"
+        app:minVal="0"
+        app:normalText="normal"
+        app:title="test BMI 1" />
+
+    <com.ant.anttestlibrary.BMIView
+        android:id="@+id/BMIView2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="@dimen/activity_margin"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/activity_margin"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bmi_bg"
+        android:visibility="gone"
+        app:circleRadius="5dp"
+        app:circleStokeWidth="3dp"
+        app:currentVal="350"
+        app:lineWidth="5dp"
+        app:midColor="@color/colorAccent"
+        app:rightColor="@color/color_red"
+        app:title="test BMI 2" />
+
+    <com.ant.anttestlibrary.BMIView
+        android:id="@+id/BMIView3"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="@dimen/activity_margin"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/activity_margin"
+        android:background="@drawable/bmi_bg_top"
+        android:visibility="gone"
+        app:currentVal="370"
+        app:normalText="normal"
+        app:normalTextColor="@color/gray_press"
+        app:normalTextSize="16sp"
+        app:rightColor="@color/color_efefef"
+        app:title="test BMI 3"
+        app:titleSize="20sp" />
 
 
 </LinearLayout>

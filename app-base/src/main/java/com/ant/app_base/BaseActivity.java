@@ -8,10 +8,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
 import com.ant.app_utils.LogUtil;
-import com.ant.app_utils.StringUtil;
 import com.ant.app_utils.ToastUtil;
 
 import butterknife.ButterKnife;
@@ -94,7 +92,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     //设置 状态栏黑色字体
     boolean setStateBarTextBlack() {
-        return true;
+        return false;
     }
 
     @Override

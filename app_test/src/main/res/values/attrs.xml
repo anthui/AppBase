@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BMIView">
+        <attr name="title" format="string" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="circleRadius" format="dimension" />
+        <attr name="circleStokeWidth" format="dimension" />
+        <attr name="upDrawable" format="reference" />
+        <attr name="downDrawable" format="reference" />
+        <attr name="normalText" format="string" />
+        <attr name="minNormal" format="integer" />
+        <attr name="maxNormal" format="integer" />
+        <attr name="minVal" format="integer" />
+        <attr name="maxVal" format="integer" />
+        <attr name="leftColor" format="color" />
+        <attr name="midColor" format="color" />
+        <attr name="rightColor" format="color" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="currentVal" format="float" />
+        <attr name="normalTextColor" format="color" />
+        <attr name="normalTextSize" format="dimension" />
+    </declare-styleable></resources>

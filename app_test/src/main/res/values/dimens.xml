@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="dash_line_circle_radius">14dp</dimen>
+    <dimen name="dash_line_circle_diameter">28dp</dimen>
+    <dimen name="dash_line_circle_margin_negative">-14dp</dimen>
+    <dimen name="dash_line_circle_margin_positive">14dp</dimen>
+    <dimen name="dash_line_width">2dp</dimen>
+    <dimen name="dash_line_dash_width">6dp</dimen>
+    <dimen name="dash_line_dash_gap">3dp</dimen>
+</resources>

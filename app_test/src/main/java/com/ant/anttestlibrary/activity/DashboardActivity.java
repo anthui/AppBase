@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ant.anttestlibrary.R;
+import com.ant.anttestlibrary.view.BMIView;
 import com.ant.anttestlibrary.view.DashboardView;
 import com.ant.app_base.BaseActivity;
 
@@ -28,6 +29,53 @@ public class DashboardActivity extends BaseActivity {
     @Override
     public void initData() {
 
+
+        BMIView view1 = findViewById(R.id.BMIView1);
+        BMIView view2 = findViewById(R.id.BMIView2);
+
+        view1.setValue(24);
+        view1.setValue(44);
+
+
+        // 代码设置各种值
+//        NewBmiView bmiview = findViewById(R.id.bmiview);
+//        //将BMI指数传递过去
+//        bmiview.setBmi(35);
+//        bmiview.setBmiText("35.0");
+
+    }
+
+
+    private String checn(long walkTime) {
+        String hour = "00";
+        String min = "00";
+        if (walkTime > 60) {
+            long h = walkTime / 60;
+            if (h >= 10) {
+                hour = h + "";
+            } else {
+                hour = "0" + h;
+            }
+
+            //剩余分钟
+            long m = walkTime - 60 * h;
+
+            if (m >= 10) {
+                min = m + "";
+
+            } else {
+                min = "0" + m;
+            }
+
+        } else if (walkTime < 10) {
+
+            min = "0" + walkTime;
+        } else {
+            min = "" + walkTime;
+
+        }
+
+        return hour + " 小时 " + min + " 分钟";
     }
 
     @Override
@@ -38,22 +86,6 @@ public class DashboardActivity extends BaseActivity {
             public void onClick(View v) {
 
                 dashView.startAnimation(30);
-
-//
-//                ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 60, 0);
-//                valueAnimator.setDuration(60000).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//                    @Override
-//                    public void onAnimationUpdate(ValueAnimator animation) {
-//                        dashView.startAnimation();
-//
-//                    }
-//                });
-//                valueAnimator.setInterpolator(new LinearInterpolator());
-//
-//                valueAnimator.start();
-
-//                dashView.setCreditValue(new Random().nextInt(950 - 350) + 350);
-
             }
         });
     }

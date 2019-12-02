@@ -408,33 +408,34 @@ public class DateUtil {
         return paramLong.toString();
     }
 
+    Disposable disposable;
 
     public void timer() {
 
-
-        Observable.timer(1000, TimeUnit.MICROSECONDS)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Long>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(Long aLong) {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
+//        Observable.timer(1000, TimeUnit.MICROSECONDS)
+//                .observeOn(c)
+//                .subscribe(new Observer<Long>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//                        disposable = d;
+//                        d.dispose();
+//                    }
+//
+//                    @Override
+//                    public void onNext(Long aLong) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//
+//                    }
+//                });
 
     }
 
