@@ -110,6 +110,7 @@ public abstract class BaseDialog extends DialogFragment implements BaseViewInter
     public void initRecyclerView() {
 
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -162,10 +163,14 @@ public abstract class BaseDialog extends DialogFragment implements BaseViewInter
             }
 
             //设置dialog高度
-            if (height == 0) {
-                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-            } else {
+            if (height == -1) {
+                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+            } else if (height > 0) {
+
                 lp.height = dp2px(getContext(), height);
+            } else {
+                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
             }
 
             //设置dialog进入、退出的动画
