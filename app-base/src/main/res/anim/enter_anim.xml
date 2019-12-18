@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="300">
+    android:duration="250">
+    <!--    键盘弹窗 显示的动画事件 大约250 退出大约300-->
     <translate
         android:fromYDelta="100%p"
         android:toYDelta="0%p" />

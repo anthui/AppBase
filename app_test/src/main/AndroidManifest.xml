@@ -23,6 +23,15 @@
 
         <activity android:name=".activity.StepActivity">
 
+
+        </activity>
+        <activity android:name=".activity.DashboardActivity">
+
+
+        </activity>
+        <activity android:name=".activity.InputActicity2">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -31,7 +40,8 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".activity.DashboardActivity">
+        <!--键盘输入-->
+        <activity android:name=".activity.InputActicity">
 
 
         </activity>
