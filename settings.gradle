@@ -1,1 +1,1 @@
-include ':app', ':app-base', ':app_test', ':app_refresh', ':app_push', ':wallet'
+include ':app', ':app-base', ':app_test', ':app_refresh', ':app_push', ':wallet', ':app_greendao'

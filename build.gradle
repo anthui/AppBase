@@ -9,19 +9,12 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.2'
-        //butterknife
-        // classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
-//        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+        classpath 'com.android.tools.build:gradle:3.5.3'
 
-//        classpath "com.mob.sdk:MobSDK:2018.0319.1724"
 
-        //butterknife 依赖包使用
-        // classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' // 添加的部分
-
-        //热更新
-        //  classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-//        classpath 'com.google.gms:google-services:3.1.1'
+        //导入greenDao插件
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
 
     }
 }
