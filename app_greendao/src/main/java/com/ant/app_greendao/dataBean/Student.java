@@ -16,12 +16,14 @@ import org.greenrobot.greendao.annotation.Unique;
 @Entity
 public class Student {
 
-    @Id(autoincrement = true)
-    private
-    Long id;
-    @Unique
-    private
+    @Id
+    private Long id;
+    @Unique private
     int studentNo;
+
+    private String teacherId;
+
+
     private int age;
     private int name;
     private int sex;
@@ -110,5 +112,17 @@ public class Student {
         this.grade = grade;
     }
 
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", studentNo=" + studentNo +
+                ", age=" + age +
+                ", name=" + name +
+                ", sex=" + sex +
+                ", address='" + address + '\'' +
+                ", schoolName='" + schoolName + '\'' +
+                ", grade='" + grade + '\'' +
+                '}';
+    }
 }
