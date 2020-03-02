@@ -32,7 +32,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     //分页加载 默认第一页，20
     public int pageIndex = 1;
-    public int pageSize = 20;
+    public int pageSize = 6;
 
 
     //如需要多语言支持 ，打开这里

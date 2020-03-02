@@ -33,7 +33,7 @@ android {
 
 //配置GreenDao数据库相关信息
 greendao {
-    schemaVersion 1 //数据库版本号
+    schemaVersion 2 //数据库版本号
     daoPackage "com.mg.app_test.dao"//数据库 文件目录
 // 设置DaoMaster、DaoSession、Dao 包名
     targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录,请注意，这里路径用/不要用.
@@ -41,16 +41,17 @@ greendao {
     targetGenDirTests 'src/main/java' //应存储生成的单元测试的基本目录。默认为 src / androidTest / java。
 }
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':app-base')
-
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
-
-    implementation 'org.greenrobot:greendao:3.2.2' // add library
-
+    implementation 'org.greenrobot:greendao:3.2.2'
+    // add library
+    implementation files('libs/commons-beanutils-1.9.4.jar')
+    //    implementation 'apache:commons-logging:apache'
+    implementation files('libs/commons-logging-1.2.jar')
 }
