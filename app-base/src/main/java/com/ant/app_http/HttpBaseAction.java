@@ -16,6 +16,7 @@ import com.ant.app_utils.CommonUtils;
 import com.ant.app_utils.LogUtil;
 import com.ant.app_utils.StringUtil;
 
+import java.net.Proxy;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -53,11 +54,14 @@ public abstract class HttpBaseAction {
                 .connectTimeout(connectTime, TimeUnit.SECONDS)//超时时间
                 .writeTimeout(connectTime, TimeUnit.SECONDS)//写入时间
                 .readTimeout(connectTime, TimeUnit.SECONDS);//读取时间
-        //日志拦截器
+        //日志拦截器,打开日志
         if (showLog) {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.level(HttpLoggingInterceptor.Level.BODY);
             builder.addInterceptor(interceptor);
+        }else {
+            builder.proxy(Proxy.NO_PROXY);
+
         }
 
         //添加拦截器  公共参数

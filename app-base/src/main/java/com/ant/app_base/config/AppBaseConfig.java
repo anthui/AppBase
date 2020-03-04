@@ -14,8 +14,8 @@ import com.ant.app_base.R;
  */
 public class AppBaseConfig {
 
-    //所有debug控制
-    public static final boolean isDebug = BuildConfig.IS_DEBUG;
+    //日志总开关：包括 本地日志+网络日志+接口拦截
+    public static final boolean isDebug = BuildConfig.IS_OPEN_LOG;
 
     //应用包名
     public static final String getAuthority(Context mContext) {

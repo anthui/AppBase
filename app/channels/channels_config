@@ -1,5 +1,5 @@
 #渠道
-# 打包命令 gradlew clean assembleBbzReleaseChannels -Donly_channel_name=true -Dhost=api -Dchannel=config
+# 打包命令 gradlew clean assembleBbzReleaseChannels -Donly_channel_name=true -Dhost=api -Dchannel=config -Dis_open_log=false
 
 # 输出渠道apk只有渠道名
 # -Donly_channel_name=true

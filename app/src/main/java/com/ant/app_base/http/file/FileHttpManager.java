@@ -17,7 +17,7 @@ public class FileHttpManager extends HttpBaseAction {
 
     private FileHttpManager() {
         //文件上传 不打印日志 否则会报错
-        super(20, HttpBaseConfig.getHttpBaseUrl(), false);
+        super(20, "", false);
         filePostService = retrofit.create(FilePostService.class);
 
     }

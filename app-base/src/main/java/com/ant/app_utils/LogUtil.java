@@ -13,7 +13,7 @@ import com.ant.app_base.config.AppBaseConfig;
 public class LogUtil {
 
     public static final String TAG = "usdd";//标记
-    public static final boolean DEBUG = AppBaseConfig.isDebug;
+    public static boolean DEBUG = AppBaseConfig.isDebug;
     ;//是否处于debug,打包时得设置为false
 
     private LogUtil() {

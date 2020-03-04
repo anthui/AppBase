@@ -38,9 +38,12 @@ walle {
     // 指定渠道包的输出路径
 //    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
     apkOutputFolder = rootProject.file('buildApk')
+    apkFileNameFormat = jenkins.sysProperty('only_channel_name', false).toBoolean() ? '${channel}.apk' : '${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk'
 
     // 定制渠道包的APK的文件名称
-    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+//    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
     // 渠道配置文件
-    channelFile = new File("${project.getProjectDir()}/channels/channels_config")
+//    channelFile = new File("${project.getProjectDir()}/channels/channels_config")
+    channelFile = jenkins.channel_file == null ? file("channels/channels_${jenkins.channel}") : rootProject.file('channel_file')
+
 }

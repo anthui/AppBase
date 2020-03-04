@@ -16,12 +16,12 @@
 
     <!--&lt;!&ndash;启动页主题&ndash;&gt;-->
     <!--<style name="AppLaunchTheme" parent="AppTheme">-->
-        <!--<item name="android:windowNoTitle">true</item>-->
-        <!--<item name="android:animationDuration">0</item>-->
+    <!--<item name="android:windowNoTitle">true</item>-->
+    <!--<item name="android:animationDuration">0</item>-->
 
-        <!--<item name="android:windowBackground">@drawable/bg_launcher</item>-->
-        <!--&lt;!&ndash;禁止预览窗口&ndash;&gt;-->
-        <!--<item name="android:windowDisablePreview">true</item>-->
+    <!--<item name="android:windowBackground">@drawable/bg_launcher</item>-->
+    <!--&lt;!&ndash;禁止预览窗口&ndash;&gt;-->
+    <!--<item name="android:windowDisablePreview">true</item>-->
 
     <!--</style>-->
 
@@ -555,6 +555,18 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#d6d6d6</item>
         <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="tv_log" parent="tv_default_black">
+        <item name="android:gravity">center</item>
+
+        <item name="android:background">#aaa</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">50dp</item>
+
+
     </style>
 
     <color name="color_red3">#414141</color>

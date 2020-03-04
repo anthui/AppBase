@@ -13,7 +13,7 @@
 
         tools:replace="android:icon, android:label,android:theme">
 
-        <activity android:name="com.ant.app_home.activity.MainActivity">
+        <activity android:name="com.ant.app_base.LogActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -22,10 +22,11 @@
             </intent-filter>
 
         </activity>
-        <!--　   &lt;!&ndash;<meta-data&ndash;&gt;-->
-        <!--&lt;!&ndash;android:name="CHANNEL"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:value="${CHANNEL}" />&ndash;&gt;-->
 
+        <activity android:name="com.ant.app_home.activity.MainActivity">
+
+
+        </activity>
 
     </application>
 

@@ -1,0 +1,74 @@
+//通过gradle动态配置 环境参数，修改配置就可快速打包
+class JenkinsExtension {
+
+    def versionCode = null //versionCode
+    def versionName = null //versionName
+    def buildType = null //buildType
+    def flavors = null //flavors
+    def package_name = null //包名
+    def is_open_log = true // 是否打开日志，默认允许的
+    def channel = "config" //渠道文件后缀
+    def channel_file = null //channel_file会覆盖channel配置
+    def channel_list = null //channel_list会覆盖channel_file或channel配置
+    def only_channel_name = false //输出渠道apk只有渠道名
+    def has_ide = false //是否是ide运行
+    def host = "" //服务器环境 dev -> 测试；beta -> 预发； api -> 正式
+    def host_switch = has_ide //是否支持环境切换。如果是ide运行，默认true
+    def update_des = "" //更新内容
+    def send_dingtalk = false //发送钉钉消息
+    def upload_pgyer = false //上传蒲公英
+
+    //获取环境参数
+    Closure sysProperty = { String key, Object value = null ->
+        System.getProperty(key) ?: value
+    }
+
+    Project rootProject
+    Closure initProject = { Project project ->
+        rootProject = project
+        project.with {
+            //读取运行环境参数
+            versionCode = jenkins.sysProperty('versionCode')
+            versionName = jenkins.sysProperty('versionName')
+            buildType = jenkins.sysProperty('buildType')
+            flavors = jenkins.sysProperty('flavors')
+            package_name = jenkins.sysProperty('package_name')
+            is_open_log = jenkins.sysProperty('is_open_log', true).toBoolean()
+            channel = jenkins.sysProperty("channel", "config")
+            channel_file = jenkins.sysProperty("channel_file")
+            channel_list = jenkins.sysProperty("channel_list")
+            only_channel_name = jenkins.sysProperty('only_channel_name', only_channel_name).toBoolean()
+            host = jenkins.sysProperty("host", "")
+            has_ide = rootProject.gradle.startParameter.projectProperties.get('android.injected.invoked.from.ide') ?: false
+            host_switch = jenkins.sysProperty('host_switch', has_ide).toBoolean()
+            update_des = jenkins.sysProperty('update_des', "")
+            send_dingtalk = jenkins.sysProperty('send_dingtalk', false).toBoolean()
+            upload_pgyer = jenkins.sysProperty('upload_pgyer', false).toBoolean()
+        }
+    }
+}
+
+extensions.create('jenkins', JenkinsExtension)
+jenkins.initProject(rootProject)
+
+println "/********* Jenkins *********/"
+println "jenkins versionCode ${jenkins.versionCode}"
+println "jenkins versionName ${jenkins.versionName}"
+println "jenkins buildType ${jenkins.buildType}"
+println "jenkins flavors ${jenkins.flavors}"
+println "jenkins package_name ${jenkins.package_name}"
+println "jenkins is_open_log ${jenkins.is_open_log}"
+println "jenkins channel ${jenkins.channel}"
+println "jenkins channel_file ${jenkins.channel_file}"
+println "jenkins channel_list ${jenkins.channel_list}"
+println "jenkins only_channel_name ${jenkins.only_channel_name}"
+println "jenkins has_ide ${jenkins.has_ide}"
+println "jenkins host ${jenkins.host}"
+println "jenkins host_switch ${jenkins.host_switch}"
+println "jenkins update_des ${jenkins.update_des}"
+println "jenkins send_dingtalk $jenkins.send_dingtalk"
+println "jenkins upload_pgyer $jenkins.upload_pgyer"
+
+ext {
+    if (jenkins.channel_list != null) channelList = jenkins.channel_list
+}

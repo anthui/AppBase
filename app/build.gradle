@@ -5,15 +5,21 @@ android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
+
+    def package_name = jenkins.package_name
+    def version_code = jenkins.versionCode?.toInteger()
+    def version_name = jenkins.versionName
+
     defaultConfig {
-        applicationId rootProject.ext.android.applicationId
+        //动态配置包名
+        applicationId package_name ?: rootProject.ext.android.applicationId
+        //动态配置code
+        versionCode version_code ?: rootProject.ext.android.versionCode
+        //动态配置 version_name
+        versionName version_name ?: rootProject.ext.android.versionName
 
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         ndk {

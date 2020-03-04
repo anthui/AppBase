@@ -1,6 +1,8 @@
-# 打包命令 gradlew clean assembleBbzReleaseChannels -Dchannel=market -Dhost=api
-#Release打包 gradlew assembleBbzReleaseChannels -PchannelList=bbz_guanwang_ad
-#Debug打包 gradlew assembleBbzDebugChannels -PchannelList=bbz_guanwang_ad -Dupload_pgyer=true
+# 打应用市场包 全部走这里
+# 打包命令 gradlew clean assembleReleaseChannels -Dchannel=market -Dhost=api -Dis_open_log=false
+
+#Release打包 gradlew clean assembleReleaseChannels -Dhost=api -Dis_open_log=false -PchannelList=bbz_guanwang_ad
+#Debug打包 gradlew clean assembleDebugChannels -Dhost=api -Dis_open_log=false -PchannelList=bbz_guanwang_ad
 
 # 输出渠道apk只有渠道名
 # -Donly_channel_name=true
@@ -14,18 +16,5 @@
 # -DversionName = "1.4.0"
 
 bbz_360
-bbz_baidu
-bbz_yingyongbao
-bbz_yingyongbao_0
-bbz_ali
-bbz_xiaomi
-bbz_huawei
-bbz_oppo
-bbz_vivo
-bbz_samsung
-bbz_meizu
-bbz_anzhi
-bbz_guanwang_ad
-bbz_ydmm
 
 

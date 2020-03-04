@@ -24,7 +24,7 @@ public class HttpManager extends HttpBaseAction {
     PostApiService postApiService;
 
     private HttpManager() {
-        super(HttpBaseConfig.HttpConnectionTime, HttpBaseConfig.getHttpBaseUrl(), HttpBaseConfig.isHttpDebug);
+        super(HttpBaseConfig.httpConnectionTime, HttpBaseConfig.URL_HOST, HttpBaseConfig.isHttpDebug);
         postApiService = retrofit.create(PostApiService.class);
     }
 

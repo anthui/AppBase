@@ -14,15 +14,26 @@ android {
         versionName "1.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+//配置参数使用  参数参考 jenkins.gradle
+        //渠道类型
+        buildConfigField "String", "CHANNEL_TYPE", "\"${jenkins.channel}\""
+        //是否ide打包
+        buildConfigField "boolean", "HAS_IDE", "${jenkins.has_ide}"
+        //是否支持环境切换
+        buildConfigField "boolean", "HOST_SWITCH_ENABLE", "${jenkins.host_switch}"
+        //通过 命令打包修改 接口类型
+        buildConfigField "String", "HOST", "\"${jenkins.host}\""
+        //是否允许抓包
+        buildConfigField "boolean", "IS_OPEN_LOG", "${jenkins.is_open_log}"
+
     }
-
-
+    //编译类型
     buildTypes {
         release {
-            buildConfigField "boolean", "IS_DEBUG", "false"
-
+//            buildConfigField "boolean", "IS_DEBUG", "false"
         }
-
         debug {
             buildConfigField "boolean", "IS_DEBUG", "true"
         }
@@ -54,19 +65,12 @@ dependencies {
     //OKHttp3日志打印
     implementation rootProject.ext.dependencies.okHttp3Logging
     //**************************ButterKnife*************************
-    //butterknife
     api rootProject.ext.dependencies.butterknife
-//    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
-
-
     implementation rootProject.ext.dependencies.luban
-
 
     //*********************other*********************
     //glide
     api rootProject.ext.dependencies.glide
-//    annotationProcessor rootProject.ext.dependencies.glideCompiler
-    //gson
     implementation rootProject.ext.dependencies.gson
     api rootProject.ext.dependencies.ormlite
 

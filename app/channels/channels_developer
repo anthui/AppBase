@@ -1,13 +1,24 @@
-#测试域名打包 gradlew clean assembleBbzDebugChannels -PchannelList=bbz_guanwang_ad -Dhost=dev -Dhas_caught=true
-#正式域名打包 gradlew clean assembleBbzReleaseChannels -PchannelList=bbz_guanwang_ad -Dhost=api -Dhas_caught=true
-#正式域名打包 gradlew clean assembleBbzReleaseChannels -PchannelList=bbz_oppo -Dhost=api -Dhas_caught=true -DversionCode=5 -DversionName="1.4.0"
+#**********************这里出包 仅提供测试使用**********************************
+
+#测试域名 debug打包 gradlew clean assembleDebugChannels -Dchannel=developer -Dhost=dev
+
+#测试域名 releases打包 gradlew clean assembleReleaseChannels -Dchannel=developer -Dhost=dev
+
+#**************************************************正式域名 测试打包*************************************
+#正式域名 debug打包 gradlew clean assembleDebugChannels -Dchannel=developer -Dhost=api
+
+#**************************************************正式域名 正式包*************************************
+#正式域名 releases打包 gradlew clean assembleReleaseChannels -Dchannel=developer -Dhost=api
+
+#正式域名 升级包专用 gradlew clean assembleReleaseChannels -Dchannel=developer -Dhost=api  -DversionCode=5 -DversionName="1.4.0"
 #升级版本用  -DversionCode=5 -DversionName="1.4.0"
 
-# 是否可抓包
-# -Dhas_caught = true
+# 是否打开日志
+# -Dis_open_log = true 默认true
 # 服务器环境：dev -> 测试；beta -> 预发； api -> 正式
 # -Dhost=dev
 # 打包该文件下的渠道
 # -Dchannel=developer
 
-#bbz_guanwang_ad      # 开发测试默认渠道
+bbz_guanwang_ad      # 开发测试默认渠道
+
