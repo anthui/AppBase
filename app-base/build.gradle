@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+//apply plugin: 'walle'
 
 //apply plugin: 'com.novoda.bintray-release'
 

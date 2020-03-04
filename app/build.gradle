@@ -1,12 +1,5 @@
 apply plugin: 'com.android.application'
-
-//引入热更新
-//apply from: 'tinker-support.gradle'
-//引入 一键分享
-//apply from: '../MobSDK.gradle'
-
-
-
+apply from: "channels_config.gradle"
 android {
 
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -43,7 +36,7 @@ android {
         javaMaxHeapSize "4g"
     }
 
-//*********************************************签名信息******************************
+//*********************************************签名信息 start******************************
     // 签名信息
     signingConfigs {
 
@@ -55,6 +48,7 @@ android {
             storePassword '123456'
         }
     }
+//*********************************************编译类型 ******************************
 
     buildTypes {
         debug {
@@ -74,31 +68,9 @@ android {
             signingConfig signingConfigs.myConfig
         }
     }
-    flavorDimensions "default"
-    productFlavors {
-        //开发环境
-        develop {
-            applicationIdSuffix ".dev"       //applicationId "com.allsunny.packagedemo.dev"
-            buildConfigField("int", "ENV_TYPE", "1")
-            manifestPlaceholders = ["app_name": "开发环境", "app_launcher_icon": "@mipmap/ic_launcher_dev"]
-        }
 
-        //生产环境
-        product {
-            buildConfigField("int", "ENV_TYPE", "2")
-            manifestPlaceholders = ["app_name": "生产环境", "app_launcher_icon": "@mipmap/ic_launcher"]
-        }
-    }
+//*********************************************编译类型  end******************************
 
-//   打包文件信息
-    applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-            def buildName = "app"
-            def type = variant.buildType.name
-            def releaseApkName = buildName + '_' + type + "_V" + versionName + '_' + releaseTime() + '.apk'
-            outputFileName = releaseApkName
-        }
-    }
 }
 //打包时间 方法
 def releaseTime() {
@@ -107,45 +79,16 @@ def releaseTime() {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    // 3.0 存在的一些bug
-//    androidTestImplementation rootProject.ext.dependencies.runner
-//    androidTestImplementation rootProject.ext.dependencies.espressoCore
     //系统自带
     implementation rootProject.ext.dependencies.appcompatV7
-//    implementation rootProject.ext.dependencies.design
-//    implementation rootProject.ext.dependencies.constraintLayout
-//    testImplementation rootProject.ext.dependencies.junit
-//    implementation rootProject.ext.dependencies.recyclerview
-//    implementation rootProject.ext.dependencies.cardview
-    //butterknife
-//    implementation rootProject.ext.dependencies.butterknife
-    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
-    //网络请求 retrofit+rxjava+rxandroid
-//    implementation rootProject.ext.dependencies.retrofit2Rxjava2Adapter
-//    implementation rootProject.ext.dependencies.rxandroid
 
-    //分包
-//    implementation rootProject.ext.dependencies.multidex
-    //gilde
-//    implementation rootProject.ext.dependencies.glide
-//    annotationProcessor rootProject.ext.dependencies.glideCompiler //可不用
-//    implementation rootProject.ext.dependencies.ormlite
+    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+
     //日志打印 上线时去掉
     implementation project(':app-base')
+    implementation 'com.meituan.android.walle:library:1.1.6'
 
-//    implementation project(':app_test')
-    //   implementation project(':app-login')
-    //  implementation rootProject.ext.dependencies.luban
-    //  implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.2.5'
-    //implementation rootProject.ext.dependencies.luban
-    //  implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
-    // implementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
-    //   implementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
-//    implementation project(':gsyVideo')
-//    implementation 'com.amap.api:3dmap:6.6.0'
-//    implementation 'com.amap.api:location:4.4.0'
-//    implementation files('libs/alipaySdk-20180601.jar')
-//    implementation files('libs/libammsdk.jar')
+
 }
 
 //apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,15 @@
+#渠道
+# 打包命令 gradlew clean assembleBbzReleaseChannels -Donly_channel_name=true -Dhost=api -Dchannel=config
+
+# 输出渠道apk只有渠道名
+# -Donly_channel_name=true
+# 服务器环境：dev -> 测试；beta -> 预发； api -> 正式
+# -Dhost=dev
+# 使用哪个渠道文件配置
+# -Dchannel=config
+# 指定版本号
+# -DversionCode = 1
+# 指定版本名称
+# -DversionName = "1.2.0"
+xiaomi
+huawei

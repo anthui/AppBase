@@ -1,0 +1,46 @@
+apply plugin: 'walle'
+
+android {
+
+    //walle多渠道和马甲包配置
+//    productFlavors {
+//        def package_name = jenkins.package_name
+//        def version_code = jenkins.versionCode?.toInteger()
+//        def version_name = jenkins.versionName
+//        bbz {
+//            applicationId package_name ?: "com.mg.bbz"
+//            versionCode version_code ?: rootProject.ext.android.versionCode
+//            versionName version_name ?: rootProject.ext.android.versionName
+//            manifestPlaceholders = [
+//                    //友盟配置
+//                    UMENG_APPKEY     : "5c18a211f1f55687b7000054",
+//                    APP_CHANNEL_VALUE: "bbz_guanwang_ad",
+//                    //高德地图配置
+//                    MAP_GD_KEY       : "319ad48f52f3deee3940645031dd9d7f",
+//                    //同盾配置
+//                    PARTNER_CODE     : "",
+//
+//                    JPUSH_PKGNAME    : applicationId,
+//                    JPUSH_APPKEY     : "b467e3262dec90b07e271eef", //JPush 上注册的包名对应的 Appkey.
+//                    JPUSH_CHANNEL    : "developer-default", //暂时填写默认值即可.
+//            ]
+//            // 输出当前应用信息
+//            println "/********* package *********/"
+//            println "package_name=${applicationId}"
+//            println "version_code=${versionCode}"
+//            println "version_name=${versionName}"
+//            println "host=${jenkins.sysProperty("host", "")}"
+//        }
+//    }
+}
+
+walle {
+    // 指定渠道包的输出路径
+//    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+    apkOutputFolder = rootProject.file('buildApk')
+
+    // 定制渠道包的APK的文件名称
+    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+    // 渠道配置文件
+    channelFile = new File("${project.getProjectDir()}/channels/channels_config")
+}

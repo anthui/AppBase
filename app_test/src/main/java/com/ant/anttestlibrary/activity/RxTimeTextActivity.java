@@ -70,7 +70,7 @@
 //        tvTitle.setText("Rx定时器");
 //    }
 //
-//    private String filePath = "/storage/emulated/0/Download/ic_launcher.png";
+//    private String filePath = "/storage/emulated/0/Download/bg_ad.png";
 //
 //    @Override
 //    protected void initData() {

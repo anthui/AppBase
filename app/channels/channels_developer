@@ -1,0 +1,13 @@
+#测试域名打包 gradlew clean assembleBbzDebugChannels -PchannelList=bbz_guanwang_ad -Dhost=dev -Dhas_caught=true
+#正式域名打包 gradlew clean assembleBbzReleaseChannels -PchannelList=bbz_guanwang_ad -Dhost=api -Dhas_caught=true
+#正式域名打包 gradlew clean assembleBbzReleaseChannels -PchannelList=bbz_oppo -Dhost=api -Dhas_caught=true -DversionCode=5 -DversionName="1.4.0"
+#升级版本用  -DversionCode=5 -DversionName="1.4.0"
+
+# 是否可抓包
+# -Dhas_caught = true
+# 服务器环境：dev -> 测试；beta -> 预发； api -> 正式
+# -Dhost=dev
+# 打包该文件下的渠道
+# -Dchannel=developer
+
+#bbz_guanwang_ad      # 开发测试默认渠道

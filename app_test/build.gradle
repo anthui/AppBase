@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-
+//apply plugin: 'walle'
+//apply plugin: 'walle'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -32,53 +33,33 @@ android {
         javaMaxHeapSize "4g"
     }
 
-    applicationVariants.all { variant ->
-        if (variant.buildType.name.equals('release')) {
-            variant.outputs.all { output ->
-                def buildName = "app_"
-                def type = variant.buildType.name
-                def releaseApkName = buildName + '_' + type + "_" + versionName + '_' + releaseTime() + '.apk'
-                outputFileName = releaseApkName
-            }
-        } else {
-            variant.outputs.all { output ->
-                def buildName = "com.david.smarthome"
-                def releaseApkName = buildName + '_' + "test" + "_" + versionName + '_' + releaseTime() + '.apk'
-                outputFileName = releaseApkName
-            }
-        }
-    }
+}
 
 
-}
-def releaseTime() {
-    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
-}
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // 3.0 存在的一些bug
     androidTestImplementation rootProject.ext.dependencies.runner
     androidTestImplementation rootProject.ext.dependencies.espressoCore
     implementation project(':app-base')
-
     implementation project(":app_refresh")
-//    implementation project(":app_database")
-
     implementation rootProject.ext.dependencies.appcompatV7
-//    implementation rootProject.ext.dependencies.design
 
-//    implementation rootProject.ext.dependencies.rxandroid
-//    implementation rootProject.ext.dependencies.retrofit2Rxjava2Adapter
-//    implementation 'com.j256.ormlite:ormlite-android:5.1'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0-beta05'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
-
-//    implementation rootProject.ext.dependencies.multidex
-
-    //butterknife
-//    implementation rootProject.ext.dependencies.butterknife
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+
+//    implementation 'com.meituan.android.walle:library:1.1.6'
+
 }
+
+//walle {
+//    // 指定渠道包的输出路径
+//    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+//    // 定制渠道包的APK的文件名称
+//    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+//    // 渠道配置文件
+//    channelFile = new File("${project.getProjectDir()}/channel")
+//}

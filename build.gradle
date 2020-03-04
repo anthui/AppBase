@@ -9,12 +9,11 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
-
+        classpath 'com.android.tools.build:gradle:3.6.0'
 
         //导入greenDao插件
-        classpath 'com.android.tools.build:gradle:3.5.3'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
+        classpath 'com.meituan.android.walle:plugin:1.1.6'
 
     }
 }
@@ -35,6 +34,8 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+    delete rootProject.file('buildApk')
+
 }
 
 
