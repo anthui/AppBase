@@ -2,13 +2,19 @@ package com.ant.app_base;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
 
 import com.ant.app_home.R;
 import com.ant.app_http.Bean.HttpBaseConfig;
 import com.ant.app_utils.LogUtil;
 import com.bumptech.glide.BuildConfig;
 import com.meituan.android.walle.WalleChannelReader;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * copyright：
@@ -18,7 +24,22 @@ import com.meituan.android.walle.WalleChannelReader;
  * describe：
  */
 public class LogActivity extends BaseActivity {
-    private TextView tvContent;
+    @BindView(R.id.iv_back)
+    ImageView ivBack;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
+    @BindView(R.id.tv_right)
+    TextView tvRight;
+    @BindView(R.id.iv_right)
+    ImageView ivRight;
+    @BindView(R.id.view_line_bar)
+    View viewLineBar;
+    @BindView(R.id.tb_toolbar)
+    Toolbar tbToolbar;
+    @BindView(R.id.tv_log)
+    TextView tvLog;
+    @BindView(R.id.tv_content)
+    TextView tvContent;
 
     @Override
     public int getMainContentViewId() {
@@ -34,7 +55,7 @@ public class LogActivity extends BaseActivity {
     @Override
     public void initComponents(Bundle savedInstanceState, View rootView) {
 
-        tvContent = findViewById(R.id.tv_content);
+//        tvContent = findViewById(R.id.tv_content);
     }
 
 
@@ -66,4 +87,6 @@ public class LogActivity extends BaseActivity {
         }
         initData();
     }
+
+
 }

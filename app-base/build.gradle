@@ -14,7 +14,8 @@ android {
         versionName "1.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        //可以指定 要保留的语言 资源 打包时可以删除 其他语言
+//        resConfigs "en", "zn"
 
 //配置参数使用  参数参考 jenkins.gradle
         //渠道类型
