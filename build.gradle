@@ -3,7 +3,6 @@ apply from: "config.gradle"
 apply from: "jenkins.gradle"
 buildscript {
     // ext.kotlin_version = '1.2.31'
-
     repositories {
         google()
         jcenter()
@@ -11,26 +10,21 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.0'
-
         //导入greenDao插件
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
         classpath 'com.meituan.android.walle:plugin:1.1.6'
-
     }
 }
-
 
 allprojects {
     repositories {
         google()
         jcenter()
         maven { url 'https://maven.google.com' }
-
         maven {
             url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
         }
     }
-
 }
 
 task clean(type: Delete) {

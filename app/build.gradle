@@ -11,7 +11,7 @@ android {
     def version_name = jenkins.versionName
 
     defaultConfig {
-        //动态配置包名
+        //动态配置包名---------这里配置无效，具体看 channels_config
         applicationId package_name ?: rootProject.ext.android.applicationId
         //动态配置code
         versionCode version_code ?: rootProject.ext.android.versionCode
@@ -22,11 +22,10 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        //设置纬度
         ndk {
             "armeabi-v7a"
         }
-
-
     }
 //*********************************************jdk版本******************************
 
@@ -45,8 +44,6 @@ android {
 //*********************************************签名信息 start******************************
     // 签名信息
     signingConfigs {
-
-//mob签名测试
         myConfig {
             keyAlias 'ant_keystore'
             keyPassword '123456'
@@ -58,47 +55,31 @@ android {
 
     buildTypes {
         debug {
-
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.myConfig
-
         }
         //正式编译
         release {
-
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.myConfig
         }
     }
-
 //*********************************************编译类型  end******************************
 
-}
-//打包时间 方法
-def releaseTime() {
-    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //系统自带
     implementation rootProject.ext.dependencies.appcompatV7
-
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
-
-    //日志打印 上线时去掉
     implementation project(':app-base')
     implementation 'com.meituan.android.walle:library:1.1.6'
-
-
 }
-
-//apply plugin: 'com.google.gms.google-services'
-
 repositories {
     mavenCentral()
 }

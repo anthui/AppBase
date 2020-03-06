@@ -1,16 +1,14 @@
 #**********************这里出包 仅提供测试使用**********************************
 
-#测试域名 debug打包 gradlew clean assembleDebugChannels -Dchannel=developer -Dhost=dev
+#测试域名 debug打包 gradlew clean assembleAppDebugChannels -Dchannel=developer -Dhost=dev
 
-#测试域名 releases打包 gradlew clean assembleReleaseChannels -Dchannel=developer -Dhost=dev
+#测试域名 releases打包 gradlew clean assembleAppReleaseChannels -Dchannel=developer -Dhost=dev
 
-#**************************************************正式域名 测试打包*************************************
-#正式域名 debug打包 gradlew clean assembleDebugChannels -Dchannel=developer -Dhost=api
+#正式域名 debug打包 gradlew clean assembleAppDebugChannels -Dchannel=developer -Dhost=api
 
-#**************************************************正式域名 正式包*************************************
-#正式域名 releases打包 gradlew clean assembleReleaseChannels -Dchannel=developer -Dhost=api
+#正式域名 releases打包 gradlew clean assembleAppReleaseChannels -Dchannel=developer -Dhost=api
 
-#正式域名 升级包专用 gradlew clean assembleReleaseChannels -Dchannel=developer -Dhost=api  -DversionCode=5 -DversionName="1.4.0"
+#正式域名 升级包专用 gradlew clean assembleAppReleaseChannels -Dchannel=developer -Dhost=api  -DversionCode=5 -DversionName="1.4.0"
 #升级版本用  -DversionCode=5 -DversionName="1.4.0"
 
 # 是否打开日志

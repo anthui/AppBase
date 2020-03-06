@@ -6,7 +6,7 @@
     1、rxAndroid的实现原理、使用方法---------管理异步线程
         涉及思想：响应式编程，观察者模式
         rxAndroid （基于RxJava) 可以理解为异步处理（后期最好不在使用new Thread()开辟线程）------基于观察者模式思想
-        api:https://mcxiaoke.gitbooks.io/rxdocs/content/Intro.html
+        api: https://mcxiaoke.gitbooks.io/rxdocs/content/Intro.html
     2、OKHttp------实现网路请求
         超时时间、日志、文件传输、公共参数等等
     3、retrofit-----可以理解为通过注解方式 对okHttp的一种封装

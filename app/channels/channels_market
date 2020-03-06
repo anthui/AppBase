@@ -1,8 +1,8 @@
 # 打应用市场包 全部走这里
-# 打包命令 gradlew clean assembleReleaseChannels -Dchannel=market -Dhost=api -Dis_open_log=false
+# 打包命令 gradlew clean assembleAppReleaseChannels -Dchannel=market -Dhost=api -Dis_open_log=false
 
-#Release打包 gradlew clean assembleReleaseChannels -Dhost=api -Dis_open_log=false -PchannelList=bbz_guanwang_ad
-#Debug打包 gradlew clean assembleDebugChannels -Dhost=api -Dis_open_log=false -PchannelList=bbz_guanwang_ad
+#Release打包 gradlew clean assembleAppReleaseChannels -Dhost=api -Dis_open_log=false -PchannelList=bbz_guanwang_ad
+#Debug打包 gradlew clean assembleAppDebugChannels -Dhost=api -Dis_open_log=false -PchannelList=bbz_guanwang_ad
 
 # 输出渠道apk只有渠道名
 # -Donly_channel_name=true

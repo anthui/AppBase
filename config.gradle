@@ -1,7 +1,7 @@
 ext {
     android = [
             compileSdkVersion: 28,
-            applicationId    : 'com.ant.antapp',
+            applicationId    : 'com.ant.app',
             buildToolsVersion: "28.0.3",
             minSdkVersion    : 19,
             targetSdkVersion : 28,
