@@ -7,6 +7,8 @@ android {
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
+        dataBinding.enabled = true
+
         applicationId "com.ant.antTest"
 
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -55,7 +57,7 @@ dependencies {
 
 }
 
-//walle {
+//walle {LifecycleOwner
 //    // 指定渠道包的输出路径
 //    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
 //    // 定制渠道包的APK的文件名称

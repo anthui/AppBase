@@ -63,8 +63,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         if (getMainContentViewId() != 0) {
             mView = View.inflate(this, getMainContentViewId(), null);
             setContentView(mView);
+            ButterKnife.bind(this);
         }
-        ButterKnife.bind(this);
 
         //初始化布局
         initComponents(savedInstanceState, mView);

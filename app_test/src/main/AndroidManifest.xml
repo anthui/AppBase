@@ -14,6 +14,16 @@
 
         tools:replace="android:icon, android:label,android:theme">
 
+        <activity android:name="com.ant.modul.dataBinding.HomeActivity">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.ant.anttestlibrary.activity.HomeTabActivity"
             android:launchMode="singleInstance">
@@ -91,13 +101,13 @@
 
         <!--        跨进程服务通讯-->
         <activity android:name="com.ant.modul.aild.ClientActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name="com.ant.modul.lifecycle.LifecycleActivity">
+
+
+        </activity>
+        <activity android:name="com.ant.modul.lifecycle.LifecycleActivity2" />
 
     </application>
 

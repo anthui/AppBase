@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data class="Aview">
+
+        <variable
+            name="model"
+
+            type="com.ant.modul.lifecycle.viewmodel.LifeViewModel" />
+
+        <variable
+            name="datas"
+            type="com.ant.modul.lifecycle.Data" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--        <include layout="@layout/layout_toolbar" />-->
+
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#aaa"
+            android:gravity="center"
+            android:text="@{datas.message,default=haha}"
+            android:textColor="#00f"
+            android:textSize="30sp" />
+
+
+        <FrameLayout
+            android:id="@+id/frag_a"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#00ff00" />
+
+        <FrameLayout
+            android:id="@+id/frag_2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</layout>

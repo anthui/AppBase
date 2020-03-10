@@ -5,6 +5,7 @@ apply plugin: 'com.android.library'
 
 android {
 
+    dataBinding.enabled = true
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
@@ -47,11 +48,12 @@ android {
 dependencies {
 
     //****************************android*******************
-    implementation rootProject.ext.dependencies.supportV4
+//    implementation rootProject.ext.dependencies.supportV4
     api rootProject.ext.dependencies.design
     api rootProject.ext.dependencies.recyclerview
     api rootProject.ext.dependencies.multidex
     api rootProject.ext.dependencies.constraintLayout
+    api rootProject.ext.dependencies.appcompatV7
 
 
     //**************************网络请求 okHttp+retrofit+rxJava+rxAndroid*************************
@@ -68,6 +70,7 @@ dependencies {
     //**************************ButterKnife*************************
     api rootProject.ext.dependencies.butterknife
     implementation rootProject.ext.dependencies.luban
+
 
     //*********************other*********************
     //glide

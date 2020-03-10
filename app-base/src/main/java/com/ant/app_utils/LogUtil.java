@@ -138,9 +138,7 @@ public class LogUtil {
 
     public static void e(String TAG, String msg) {
         if (DEBUG)
-            if (msg.contains("哈哈")) {
-                return;
-            }
+
 
         android.util.Log.e(TAG, buildMessage(msg));
     }

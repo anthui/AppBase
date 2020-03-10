@@ -44,6 +44,8 @@ public abstract class HttpBaseAction {
     // public IHttpRequest mHttpRequest;
     public Retrofit retrofit;
 
+    //记录当前的 activity
+    private Activity currentActivity;
 
     protected HttpBaseAction(int connectTime, String baseUrl, boolean showLog) {
 
@@ -59,7 +61,7 @@ public abstract class HttpBaseAction {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.level(HttpLoggingInterceptor.Level.BODY);
             builder.addInterceptor(interceptor);
-        }else {
+        } else {
             builder.proxy(Proxy.NO_PROXY);
 
         }
@@ -80,6 +82,8 @@ public abstract class HttpBaseAction {
                 .addConverterFactory(GsonConverterFactory.create())//Gson解析器
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//RxAndroid适配器
                 .build();
+
+
 
     }
 
@@ -103,8 +107,6 @@ public abstract class HttpBaseAction {
 
     protected <T> void enqueue(Observable<HttpResult<T>> observable, final OnHttpRequestListener listener) {
 
-
-        //对象赋值 这里多余，只是忽略报 警告
         Disposable subscribe = observable
                 //Schedulers.io()线程调度 使用io线程，处理网络请求、文件存储等耗时操作，会有类似于有线程缓存的存在----
                 // 其他：immediate当前线程执行，
@@ -165,11 +167,12 @@ public abstract class HttpBaseAction {
                                 listener.onFailure(errBean);
                             }
                         }
-                        // LogUtil.e("err=========" + throwable.getCause() + "   message===" + throwable.getMessage());
-
                     }
                 });
-
+        //解除绑定，防止内存泄漏
+//        if (currentActivity instanceof LifecycleOwner) {
+//            new DisposableManager().bindLifecycle((LifecycleOwner) currentActivity, subscribe);
+//        }
 
     }
 

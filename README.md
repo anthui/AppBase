@@ -1,6 +1,4 @@
 
-哈哈哈哈哈
-、、
 # AppBase----引用开源框架地址----------------
 RxAndroid: https://github.com/ReactiveX/RxAndroid,https://mcxiaoke.gitbooks.io/rxdocs/content/Intro.html
 RxJava: https://github.com/ReactiveX/RxJava
@@ -23,6 +21,7 @@ gradle版本:5.6.4
        src同级项目 可以配置 app(release版）、appDebug(测试目录 debug自动走）
        资源文件： appDebug-debug-app-main
        java文件：公共资源放 main, 差异性资源必须各自放（main中不能存在差异性java代码）如需要可以现在 debug中测试后 在放入 app或者main中
+    3、app-base 基础混淆方案
 
 2019-07-01  as版本升级--anthui
 开发版本：28.0.0

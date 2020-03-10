@@ -75,7 +75,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //系统自带
-    implementation rootProject.ext.dependencies.appcompatV7
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
     implementation project(':app-base')
     implementation 'com.meituan.android.walle:library:1.1.6'

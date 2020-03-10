@@ -5,6 +5,8 @@ android {
 
 
     defaultConfig {
+        dataBinding.enabled = true
+
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
 
