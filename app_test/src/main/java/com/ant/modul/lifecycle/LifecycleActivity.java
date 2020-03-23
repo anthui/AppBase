@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.ant.anttestlibrary.R;
 import com.ant.anttestlibrary.databinding.Aview;
 import com.ant.app_base.BaseActivity;
+import com.ant.app_base.BaseBindActivity;
 import com.ant.app_utils.LogUtil;
 import com.ant.modul.lifecycle.viewmodel.LifeViewModel;
 import com.ant.modul.lifecycle.viewmodel.fragment.FragmentA;
@@ -24,21 +25,8 @@ import com.ant.modul.lifecycle.viewmodel.fragment.FragmentB;
  * creation date： 2020/3/9.
  * describe：
  */
-public class LifecycleActivity extends BaseActivity {
-    //    @BindView(R.id.iv_back)
-//    ImageView ivBack;
-//    @BindView(R.id.tv_title)
-//    TextView tvTitle;
-//    @BindView(R.id.tv_right)
-//    TextView tvRight;
-//    @BindView(R.id.iv_right)
-//    ImageView ivRight;
-//    @BindView(R.id.view_line_bar)
-//    View viewLineBar;
-//    @BindView(R.id.tb_toolbar)
-//    Toolbar tbToolbar;
-//    @BindView(R.id.tv_content)
-//    TextView tvContent;
+public class LifecycleActivity extends BaseBindActivity<Aview> {
+
     private FragmentA fragment;
     private FragmentB fragment1;
 
@@ -54,17 +42,13 @@ public class LifecycleActivity extends BaseActivity {
 
     @Override
     public int getMainContentViewId() {
-        viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_lifecycle);
-        viewModel = new ViewModelProvider(this).get(LifeViewModel.class);
-        viewDataBinding.setModel(viewModel);
-        datas = new Data();
-        datas.setMessage("hahahh-------------");
-        viewDataBinding.setDatas(datas);
-        return 0;
+
+        return R.layout.activity_lifecycle;
     }
 
     @Override
     public void initData() {
+
 
         fragment = new FragmentA();
         fragment1 = new FragmentB();

@@ -1,9 +1,12 @@
 package com.ant.kotlin.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import com.ant.anttestlibrary.R
-import com.ant.app_base.BaseActivity
+import com.ant.anttestlibrary.databinding.ActivityHom2Binding
+import com.ant.app_base.BaseBindActivity
 
 
 /**
@@ -14,12 +17,20 @@ import com.ant.app_base.BaseActivity
  * describe：
  */
 
-
-class MyActivity : BaseActivity() {
-    override fun getMainContentViewId(): Int {
+class Launcher : BaseBindActivity<ActivityHom2Binding>() {
 
 
-        return R.layout.activity_dash
+    override fun initComponents(savedInstanceState: Bundle?, rootView: View?) {
+
+        var tvTitle = findViewById<TextView>(R.id.tv_title)
+        tvTitle.setText("Kotlin")
+
+        dataBinding.tvRefresh.setOnClickListener { view ->
+
+            startActivity(Intent(mActivity, LifeTestActivity::class.java))
+
+
+        }
 
 
     }
@@ -28,8 +39,8 @@ class MyActivity : BaseActivity() {
     override fun initData() {
     }
 
-    override fun initComponents(savedInstanceState: Bundle, rootView: View) {
-
+    override fun getMainContentViewId(): Int {
+        return R.layout.activity_hom2
     }
 
 }

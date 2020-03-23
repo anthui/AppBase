@@ -8,6 +8,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.ant.app_utils.LogUtil;
 import com.ant.app_utils.ToastUtil;
@@ -41,7 +43,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 //        super.attachBaseContext(LocalManageUtil.setLocal(newBase));
 //    }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +61,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
 
-        if (getMainContentViewId() != 0) {
+        View view = setContentView();
+        //如果是 外部设置，则不绑定 butterKnife
+        if (view != null) {
+            mView = view;
+        } else {
             mView = View.inflate(this, getMainContentViewId(), null);
             setContentView(mView);
             ButterKnife.bind(this);
@@ -81,6 +86,13 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     @Override
     public void initRecyclerView() {
 
+    }
+
+    /**
+     * 设置布局，供给外部使用
+     */
+    protected View setContentView() {
+        return null;
     }
 
     /**
@@ -171,6 +183,14 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     public void finish() {
         super.finish();
         overridePendingTransition(0, R.anim.activity_out);
+    }
+
+
+    /**
+     * 获取对应的ViewModel
+     */
+    protected <A extends ViewModel> A getViewModel(Class<A> tClass) {
+        return new ViewModelProvider(this).get(tClass);
     }
 
 }

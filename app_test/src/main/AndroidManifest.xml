@@ -17,12 +17,22 @@
         <activity android:name="com.ant.modul.dataBinding.HomeActivity">
 
 
+        </activity>
+        <activity android:name="com.ant.kotlin.activity.LifeTestActivity" />
+        <activity android:name="com.ant.kotlin.activity.Launcher">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <!--        MVVM测试用例-->
+        <activity android:name="com.ant.modul.mvvm.HomeActivity">
+
         </activity>
         <activity
             android:name="com.ant.anttestlibrary.activity.HomeTabActivity"

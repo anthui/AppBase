@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StyleRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.ant.app_base.BaseViewInterFace;
@@ -229,10 +230,16 @@ public abstract class BaseDialog extends DialogFragment implements BaseViewInter
     public BaseDialog show(FragmentManager manager) {
         //已经添加
 
+        Fragment fragmentByTag = manager.findFragmentByTag(getClass().getSimpleName());
+        LogUtil.e("msg========    " + fragmentByTag);
+
         if (getDialog() != null && getDialog().isShowing()) {
+            LogUtil.e("msg========    lanjie");
+
             return this;
         }
-        super.show(manager, "tag");
+
+        super.show(manager, getClass().getSimpleName());
         return this;
     }
 

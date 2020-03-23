@@ -78,5 +78,10 @@ dependencies {
     implementation rootProject.ext.dependencies.gson
     api rootProject.ext.dependencies.ormlite
 
+    api "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+
+    //leakcanary  内存检测工具 debug时添加
+    debugApi 'com.squareup.leakcanary:leakcanary-android:2.2'
+
 
 }
