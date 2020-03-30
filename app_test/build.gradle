@@ -50,10 +50,14 @@ android {
 
 dependencies {
 //    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    // 3.0 存在的一些bug
+    //本地测试库---单元测试使用
+    testImplementation 'junit:junit:4.13'
+    //添加Android环境下的测试库
     androidTestImplementation rootProject.ext.dependencies.runner
     androidTestImplementation rootProject.ext.dependencies.espressoCore
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
     implementation project(':app-base')
     implementation project(":app_refresh")
     implementation rootProject.ext.dependencies.appcompatV7
