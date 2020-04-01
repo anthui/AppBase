@@ -8,4 +8,8 @@ package com.ant.modul.test.javaTest;
  * describe：
  */
 public class Student {
+
+    public void mockList() {
+    }
+
 }
