@@ -1,5 +1,7 @@
 package com.ant.modul.test.javaTest;
 
+import android.util.Log;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -12,8 +14,9 @@ import java.util.Locale;
  * describe：
  */
 public class SimpleClass {
-
     public boolean isTeenager(int age) {
+
+
         if (age < 15) {
             return true;
         }
@@ -42,5 +45,12 @@ public class SimpleClass {
             return "";
         }
         return sdf;
+    }
+
+    public void setMessage(String haha) {
+
+        Log.e("msg", "msg==========  " + haha);
+
+
     }
 }
