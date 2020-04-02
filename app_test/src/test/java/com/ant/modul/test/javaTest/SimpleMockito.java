@@ -5,12 +5,18 @@ import org.junit.runner.RunWith;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.Spy;
+import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.stubbing.Answer;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.atLeastOnce;
@@ -20,6 +26,7 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -127,6 +134,16 @@ public class SimpleMockito {
         log(list.get(5));
         log(list.get(999));
 
+        list.clear();
+        //using mocks
+        list.add("one");
+//        list.add("two");
+
+//        verify(list).add("one");
+
+        //following verification will fail
+//        verifyNoMoreInteractions(list);
+
 
     }
 
@@ -199,20 +216,85 @@ public class SimpleMockito {
         inOrder(mockTest).verify(mockTest).mockFunTest();
         inOrder(mockTest).verify(mockTest).mockFunTest("haha");
 
-        MockDemo mock1 = mock(MockDemo.class);
-        Student mock2 = mock(Student.class);
-        mock1.mockFunTest(mock2);
-        InOrder inOrder2 = inOrder(mock1, mock2);
-        inOrder2.verify(mock2).mockList();
-        inOrder2.verify(mock1).mockList();
+//        MockDemo mock1 = mock(MockDemo.class);
+//        Student mock2 = mock(Student.class);
+//        mock1.mockFunTest(mock2);
+//        mock1.mockList();
+//        InOrder inOrder2 = inOrder(mock1, mock2);
+//        inOrder2.verify(mock2).mockList();
+//        inOrder2.verify(mock1).mockList();
 
 
     }
 
 
+    @Mock
+    MockDemo mockDemo;
+
+    /**
+     * 设置回调
+     */
+    @Test
+    public void callBack() {
+//        when(mockDemo.setMessage("haha")).thenReturn("ooooo");
+        //任意类型 都返回真实返回数据
+//        when(mockDemo.setMessage(anyString())).thenCallRealMethod();
+
+        when(mockDemo.setMessage(anyString(), anyString())).thenAnswer(new Answer<String>() {
+            @Override
+            public String answer(InvocationOnMock invocation) throws Throwable {
+
+                Object[] arguments = invocation.getArguments();
+                Object mock = invocation.getMock();
+                log(Arrays.toString(arguments) + " mock " + mock);
+
+                return Arrays.toString(arguments) + "  haha ";
+            }
+        });
+//        log("callBack====  " + mockDemo.setMessage("haha"));
+        log("callBack====  " + mockDemo.setMessage("啦啦啦啦", "ppppp"));
+    }
+
+
+    @Spy
+    List<String> strings;
+
+    @Test
+    public void testSky() {
+        List list = new LinkedList();
+        //间谍操作，可以理解为真实对象 非模拟对象
+        List spy = spy(list);
+
+        //optionally, you can stub out some methods:
+//        when(spy.size()).thenReturn(100);
+
+        //using the spy calls *real* methods
+        spy.add("one");
+        spy.add("two");
+
+        //prints "one" - the first element of a list
+        System.out.println(spy.get(0));
+
+        //size() method was stubbed - 100 is printed
+        System.out.println(spy.size());
+
+        //optionally, you can verify
+        verify(spy).add("one");
+        verify(spy).add("two");
+
+
+        strings.add("hahha");
+        strings.add("edd");
+        strings.add("hahhao");
+
+        log("spy", strings.get(0));
+        log("spy", strings.size() + "");
+        log("spy", strings.get(99));
+    }
+
     private void log(String tag, String message) {
 
-        System.out.println(tag + "   " + message);
+        System.out.println(tag + " ----  " + message);
 
     }
 

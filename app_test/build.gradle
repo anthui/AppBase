@@ -44,7 +44,9 @@ android {
         preDexLibraries = false //分面 不能进行预加载
         javaMaxHeapSize "4g"
     }
-
+    lintOptions {
+        abortOnError false
+    }
     testOptions {
         unitTests {
             includeAndroidResources = true
@@ -59,18 +61,21 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     testImplementation 'androidx.test:core:1.2.0'
     testImplementation "com.google.truth:truth:1.0.1"
+    //mockito 模拟框架---打桩
+    testImplementation 'org.mockito:mockito-core:3.3.3'
 
     //添加Android环境下的测试库
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test:rules:1.2.0'
-    testImplementation 'org.mockito:mockito-core:3.3.3'
-
-    testImplementation 'org.robolectric:robolectric:4.3'
-
-
     //UI自动化测试库(espresso)
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //自动执行ui
+//    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+
+//    testImplementation 'org.robolectric:robolectric:4.3'
+
+
     //===============================单元测试库  end==================================
 
 

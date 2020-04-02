@@ -18,9 +18,10 @@ public class MockDemo {
     public void mockFunTest(Student student) {
         LogUtil.e("执行该方法");
 
-        student.mockList();
-        mockList();
+//        student.mockList();
+//        mockList();
     }
+
     /*
      *验证是否执行该方法
      * */
@@ -39,6 +40,16 @@ public class MockDemo {
      * */
     public void mockFunTest(String message) {
         LogUtil.e("执行该方法" + message);
+    }
+
+    public String setMessage(String messaage) {
+
+        return messaage;
+    }
+
+    public String setMessage(String messaage, String message2) {
+
+        return messaage+message2;
     }
 
 }

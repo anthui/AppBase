@@ -1,2 +1,3 @@
 include ':app', ':app-base', ':app_test', ':app_refresh', ':app_push',  ':app_greendao'
 include ':lib'
+include ':myapplication'
