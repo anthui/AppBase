@@ -1,6 +1,5 @@
 package com.ant.modul.test.javaTest;
 
-import org.bouncycastle.util.test.SimpleTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -12,6 +11,7 @@ import org.junit.runners.Suite;
  * describe：
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({SimpleClassTest.class,SimpleClassTest.class})
+@Suite.SuiteClasses({SimpleClassTest.class, SimpleClassTest.class})
 public class RunTest {
+//    ActivityUnitTestCase.
 }

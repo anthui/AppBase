@@ -70,10 +70,13 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.2.0'
     //UI自动化测试库(espresso)
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    //自动执行ui
-//    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    //Intent操作 页面提啊黄钻
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.2.0'
 
-//    testImplementation 'org.robolectric:robolectric:4.3'
+    //自动执行ui
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+
+    testImplementation 'org.robolectric:robolectric:4.3'
 
 
     //===============================单元测试库  end==================================
