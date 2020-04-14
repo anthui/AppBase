@@ -4,6 +4,7 @@
     package="com.ant.anttestlibrary">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name="com.ant.app_base.BaseApplication"
         android:allowBackup="true"
@@ -116,14 +117,17 @@
         <activity android:name="com.ant.modul.test.androidTest.LoginActivity">
 
 
+        </activity>
+        <activity android:name="com.ant.modul.test.androidTest.SecondActivity" />
+
+        <activity android:name="com.ant.modul.glide.GlideTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!--                <action android:name="android.intent.action.VIEW" />-->
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ant.modul.test.androidTest.SecondActivity" />
     </application>
 
 </manifest>

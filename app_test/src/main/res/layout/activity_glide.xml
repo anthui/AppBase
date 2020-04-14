@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+
+    <ImageView
+        android:id="@+id/iv_pic"
+
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:background="@color/color_red" />
+    <ImageView
+        android:id="@+id/iv_pic2"
+
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:background="@color/color_red" />
+    <ImageView
+        android:id="@+id/iv_pic3"
+
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:background="@color/color_red" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

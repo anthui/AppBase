@@ -51,10 +51,10 @@ public class SecondActivityTest {
         Instrumentation.ActivityResult activityResult = new Instrumentation.ActivityResult(Activity.RESULT_OK, null);
 
 //        intending(allOf(toPackage(InstrumentationRegistry.getInstru)))
-        intending(allOf(
-                toPackage(InstrumentationRegistry.getInstrumentation().getComponentName().getPackageName()),
-                hasComponent(hasShortClassName("SecondActivity"))
-        )).respondWith(activityResult);
+//        intending(allOf(
+//                toPackage(InstrumentationRegistry.getInstrumentation().getComponentName().getPackageName()),
+//                hasComponent(hasShortClassName("SecondActivity"))
+//        )).respondWith(activityResult);
 
 
     }
