@@ -1,5 +1,13 @@
 package com.ant.modul.glide;
 
+
+import androidx.annotation.NonNull;
+
+import com.bumptech.glide.load.Key;
+import com.bumptech.glide.load.model.GlideUrl;
+
+import java.security.MessageDigest;
+
 /**
  * copyright：
  * author：anthui
@@ -7,17 +15,22 @@ package com.ant.modul.glide;
  * creation date： 2020/4/14.
  * describe：
  */
-public class Photo {
+public class Photo extends GlideUrl {
 
-    private String url;
+//    private String url;
 
-
-    public String getUrl() {
-        return url;
+    public Photo(String url) {
+        super(url);
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+
+//    public String getUrl() {
+//        return url;
+//    }
+//
+//    public void setUrl(String url) {
+//        this.url = url;
+//    }
+
 
 }

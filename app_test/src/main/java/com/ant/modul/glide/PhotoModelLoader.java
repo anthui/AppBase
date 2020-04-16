@@ -50,8 +50,8 @@ public class PhotoModelLoader extends BaseGlideUrlLoader<Photo> {
     protected String getUrl(Photo photo, int width, int height, Options options) {
 
 
-        LogUtil.e("msg=================== " + photo.getUrl());
-        return photo.getUrl();
+//        LogUtil.e("msg=================== " + photo.getUrl());
+        return "";
     }
 
     @Override

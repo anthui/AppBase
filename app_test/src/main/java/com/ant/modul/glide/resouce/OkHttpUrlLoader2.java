@@ -2,12 +2,16 @@ package com.ant.modul.glide.resouce;
 
 import com.ant.app_utils.LogUtil;
 import com.ant.modul.glide.Photo;
+import com.bumptech.glide.load.Key;
 import com.bumptech.glide.load.Options;
+import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.ModelLoader;
 import com.bumptech.glide.load.model.ModelLoaderFactory;
 import com.bumptech.glide.load.model.MultiModelLoaderFactory;
+import com.bumptech.glide.signature.ObjectKey;
 
 import java.io.InputStream;
+import java.net.MalformedURLException;
 
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
@@ -15,34 +19,38 @@ import okhttp3.OkHttpClient;
 /**
  * A simple model loader for fetching media over http/https using OkHttp.
  */
-public class OkHttpUrlLoader implements ModelLoader<Photo, InputStream> {
+public class OkHttpUrlLoader2 implements ModelLoader<GlideUrl, InputStream> {
 
     private final Call.Factory client;
 
-    public OkHttpUrlLoader(Call.Factory client) {
+    public OkHttpUrlLoader2(Call.Factory client) {
         this.client = client;
     }
 
     @Override
-    public boolean handles(Photo url) {
+    public boolean handles(GlideUrl url) {
         return true;
     }
 
     @Override
-    public LoadData<InputStream> buildLoadData(Photo model, int width, int height,
+    public LoadData<InputStream> buildLoadData(GlideUrl model, int width, int height,
                                                Options options) {
 
 //        GlideUrl glideUrl = new GlideUrl(model.getUrl());
 //        Key diskCacheKey = new ObjectKey(model.getUrl());
 
-        LogUtil.e("msg=========glide== ======= " + model.toStringUrl());
+        try {
+            LogUtil.e("msg================ " + model.toURL().getPath());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         return new LoadData<>(model, new OkHttpStreamFetcher(client, model));
     }
 
     /**
-     * The default factory for {@link OkHttpUrlLoader}s.
+     * The default factory for {@link OkHttpUrlLoader2}s.
      */
-    public static class Factory implements ModelLoaderFactory<Photo, InputStream> {
+    public static class Factory implements ModelLoaderFactory<GlideUrl, InputStream> {
         private static volatile Call.Factory internalClient;
         private Call.Factory client;
 
@@ -74,8 +82,8 @@ public class OkHttpUrlLoader implements ModelLoader<Photo, InputStream> {
         }
 
         @Override
-        public ModelLoader<Photo, InputStream> build(MultiModelLoaderFactory multiFactory) {
-            return new OkHttpUrlLoader(client);
+        public ModelLoader<GlideUrl, InputStream> build(MultiModelLoaderFactory multiFactory) {
+            return new OkHttpUrlLoader2(client);
         }
 
         @Override

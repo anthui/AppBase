@@ -64,15 +64,6 @@ public class HttpUrlFetcher implements DataFetcher<InputStream> {
     try {
       InputStream result = loadDataWithRedirects(glideUrl.toURL(), 0, null, glideUrl.getHeaders());
 
-//
-//        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(new byte[33]);
-//        InputStream inputStream = new InputStream() {
-//            @Override
-//            public int read() throws IOException {
-//                return 0;
-//            }
-//        };
-
         callback.onDataReady(result);
     } catch (IOException e) {
       if (Log.isLoggable(TAG, Log.DEBUG)) {
