@@ -1,5 +1,6 @@
 package com.ant.anttestlibrary.dialog.inPutDialog;
 
+import android.content.DialogInterface;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,6 +9,8 @@ import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.ant.anttestlibrary.R;
 import com.ant.app_base.baseDialog.BaseDialog;
@@ -22,6 +25,8 @@ import com.ant.app_utils.LogUtil;
  * describe：     键盘弹窗 显示的动画事件 大约250 退出大约300，如果动画事件被修改，要单独设置动画时间
  */
 public class InputDialog extends BaseDialog implements ViewTreeObserver.OnGlobalLayoutListener, View.OnClickListener {
+
+
 
 
     private EditText editText;

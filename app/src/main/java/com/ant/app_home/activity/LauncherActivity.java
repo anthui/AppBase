@@ -1,10 +1,14 @@
 package com.ant.app_home.activity;
 
+import android.app.ActivityManager;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 
 import com.ant.app_base.BaseActivity;
+import com.ant.app_base.version.APPUtil;
 import com.ant.app_home.R;
+import com.mg.APPUtils;
 
 /**
  * copyright：
@@ -21,6 +25,7 @@ public class LauncherActivity extends BaseActivity {
 
     @Override
     public void initData() {
+        Drawable drawable = getResources().getDrawable(R.mipmap.ic_launcher);
 
     }
 

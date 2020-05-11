@@ -11,5 +11,17 @@
 
     </style>
 
+    <style name="tv_file">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">#aaa</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:text">哈哈</item>
+
+
+    </style>
+
 
 </resources>

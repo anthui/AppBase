@@ -5,13 +5,11 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 
-import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.ant.anttestlibrary.R;
 import com.ant.anttestlibrary.databinding.Aview;
-import com.ant.app_base.BaseActivity;
 import com.ant.app_base.BaseBindActivity;
 import com.ant.app_utils.LogUtil;
 import com.ant.modul.lifecycle.viewmodel.LifeViewModel;
@@ -73,9 +71,9 @@ public class LifecycleActivity extends BaseBindActivity<Aview> {
     @Override
     public void initComponents(Bundle savedInstanceState, View rootView) {
 
-//        ViewModelProvider.AndroidViewModelFactory.getInstance(LifeViewModel.class)
+//        ViewModelProvider.AndroidViewModelFactory instance = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());
 
-
+        viewModel = new ViewModelProvider(this).get(LifeViewModel.class);
         LogUtil.e("获取 ViewMOdeo activity  == " + viewModel.hashCode());
 
         viewModel.getLiveData().observe(this, new Observer<String>() {
@@ -83,16 +81,12 @@ public class LifecycleActivity extends BaseBindActivity<Aview> {
             public void onChanged(String s) {
                 LogUtil.e("msg,数据改变 " + s);
                 Log.e("msg", "msg == =========================================" + s);
-//                viewDataBinding.tvContent.setText(s);
                 viewModel.setMessage(s);
 
-                datas.setMessage("00000000000000000000000000" + s);
-                viewDataBinding.setDatas(datas);
-//                tvContent.setText(s);
+
             }
         });
 
-//        viewModel.getLiveData().setValue("哈哈哈哈哈");
     }
 
 

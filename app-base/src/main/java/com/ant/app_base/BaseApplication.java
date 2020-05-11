@@ -6,6 +6,8 @@ import android.content.res.Configuration;
 
 import androidx.multidex.MultiDex;
 
+import cat.ereza.customactivityoncrash.config.CaocConfig;
+
 /**
  * copyright：
  * author：anthui
@@ -63,8 +65,28 @@ public class BaseApplication extends Application {
      * 注册全局异常处理类
      */
     private void registerException() {
-        AppExceptionHelper.getInstance().register(this);
+//        AppExceptionHelper.getInstance().register(this);
+        defaultCrash();
 
+    }
+
+    /**
+     * @author：anthui creation date：2020/5/11
+     * describe：初始化 错误监听
+     */
+    public void defaultCrash() {
+        CaocConfig.Builder.create()
+                .backgroundMode(CaocConfig.BACKGROUND_MODE_SILENT) //背景模式,开启沉浸式
+                .enabled(true) //是否启动全局异常捕获
+                .showErrorDetails(true) //是否显示错误详细信息
+                .showRestartButton(true) //是否显示重启按钮
+                .trackActivities(true) //是否跟踪Activity
+                .minTimeBetweenCrashesMs(2000) //崩溃的间隔时间(毫秒)
+                .errorDrawable(R.mipmap.bg_load) //错误图标
+//                .restartActivity(LoginActivity.class) //重新启动后的activity
+//                .errorActivity(YourCustomErrorActivity.class) //崩溃后的错误activity
+//                .eventListener(new YourCustomEventListener()) //崩溃后的错误监听
+                .apply();
     }
 
 }

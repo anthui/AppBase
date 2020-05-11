@@ -83,6 +83,8 @@ dependencies {
     //leakcanary  内存检测工具 debug时添加
     debugApi 'com.squareup.leakcanary:leakcanary-android:2.2'
 
+    api 'cat.ereza:customactivityoncrash:2.3.0'
+
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 }

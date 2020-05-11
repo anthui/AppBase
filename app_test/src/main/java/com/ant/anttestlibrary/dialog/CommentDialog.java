@@ -29,7 +29,7 @@ public class CommentDialog extends BaseDialog {
     TextView tvSend;
     @BindView(R.id.layout_input)
     LinearLayout layoutInput;
-    private InputDialog inputDialog;
+//    private InputDialog inputDialog;
 
     @Override
     public int getMainContentViewId() {
@@ -54,40 +54,40 @@ public class CommentDialog extends BaseDialog {
     public void initComponents(Bundle savedInstanceState, View rootView) {
 //如果外部 弹窗会变动，可以设置这个
         //        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
-        inputDialog = new InputDialog();
-        inputDialog.setOnInputMessageCall(new InputDialog.onInputMessageCall() {
-            @Override
-            public void messageCall(String inputText) {
-                LogUtil.e("输入内容：  " + inputText);
-            }
-        });
-        layoutInput.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                LogUtil.e("hahahha===============================");
-                inputDialog.setHintText("哈哈哈");
-//                inputDialog.setInputText("ooooo");
-                inputDialog.show(getChildFragmentManager());
-            }
-        });
-        rootView.findViewById(R.id.view_close).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-            }
-        });
-
-        rootView.findViewById(R.id.tv_title).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                LogUtil.e("========================================");
-                if (commentDialog == null) {
-                    commentDialog = new CommentDialog();
-                }
-                commentDialog.show(getChildFragmentManager());
-            }
-        });
+//        inputDialog = new InputDialog();
+//        inputDialog.setOnInputMessageCall(new InputDialog.onInputMessageCall() {
+//            @Override
+//            public void messageCall(String inputText) {
+//                LogUtil.e("输入内容：  " + inputText);
+//            }
+//        });
+//        layoutInput.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                LogUtil.e("hahahha===============================");
+//                inputDialog.setHintText("哈哈哈");
+////                inputDialog.setInputText("ooooo");
+//                inputDialog.show(getChildFragmentManager());
+//            }
+//        });
+//        rootView.findViewById(R.id.view_close).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dismiss();
+//            }
+//        });
+//
+//        rootView.findViewById(R.id.tv_title).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                LogUtil.e("========================================");
+//                if (commentDialog == null) {
+//                    commentDialog = new CommentDialog();
+//                }
+//                commentDialog.show(getChildFragmentManager());
+//            }
+//        });
     }
 }
