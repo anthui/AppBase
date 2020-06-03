@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <TextView
+            style="@style/tv_default_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="每条间隔时长："
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/et_jiange"
+            style="@style/et_input_default"
+
+            android:background="@drawable/layout_input"
+            android:hint="输入每条的间隔时间（单位秒）"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <View style="@style/view_line" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <TextView
+            style="@style/tv_default_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="号码间隔数量："
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/et_phone_num"
+            style="@style/et_input_default"
+            android:background="@drawable/layout_input"
+            android:hint="一次发送多少条（默认50条）"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <View style="@style/view_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <TextView
+            style="@style/tv_default_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="号码批量间隔："
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/et_piliang"
+            style="@style/et_input_default"
+            android:background="@drawable/layout_input"
+            android:hint="批量间隔时间(默认60秒)"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <View style="@style/view_line" />
+
+
+    <TextView
+        style="@style/tv_default_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="每条间隔时长：每条短信发送的间隔 会存一定时间的间隔默认为2秒（可以设置为0，直接批量同时发送）\n号码批量间隔：一次批量发送的号码,发完后会进行暂停一会（默认50条）\n号码批量间隔：批次发送的间隔时长（默认1分钟）\n注：每次启动发送后，需要全部发送完后，才能重新选择号码"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

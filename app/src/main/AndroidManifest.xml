@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ant.app_home">
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+
 
     <application
         android:name="com.ant.app_base.AntApplication"
@@ -14,17 +18,26 @@
         tools:replace="android:icon, android:label,android:theme">
 
         <activity android:name="com.ant.app_base.LogActivity">
+
+
+        </activity>
+
+        <activity android:name=".activity.ConfigActivity">
+
+
+
+        </activity>
+        <activity android:name=".activity.SendHisrtoryActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity android:name="com.ant.app_home.activity.MainActivity">
-
 
         </activity>
 

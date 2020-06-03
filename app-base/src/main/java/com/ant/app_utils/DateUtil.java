@@ -114,7 +114,6 @@ public class DateUtil {
 
 
         SimpleDateFormat sdf = new SimpleDateFormat(date + "");
-
         return sdf.format(date);
     }
 
