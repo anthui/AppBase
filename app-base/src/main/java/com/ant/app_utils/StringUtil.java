@@ -53,14 +53,14 @@ public class StringUtil {
      * @param mobiles
      * @return
      */
-//	public static boolean isMobile(String mobiles) {
-//		if (StringUtil.isEmpty(mobiles)) {
-//			return false;
-//		}
-//		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
-//		Matcher m = p.matcher(mobiles);
-//		return m.matches();
-//	}
+	public static boolean isMobile(String mobiles) {
+		if (StringUtil.isEmpty(mobiles)) {
+			return false;
+		}
+		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
+		Matcher m = p.matcher(mobiles);
+		return m.matches();
+	}
 
     /**
      * 密码是否可用

@@ -43,11 +43,11 @@
 
     <!--***************************按钮默认颜色******************************-->
     <!--默认边框 线颜色-->
-    <color name="border_default">#393838</color>
+    <color name="border_default">#eeeeee</color>
 
     <!--toobar 一致的渐变颜色-->
-    <color name="toolbar_left_default">#000000</color>
-    <color name="toolbar_right_default">#f6bc00</color>
+    <color name="toolbar_left_default">#f78c2e</color>
+    <color name="toolbar_right_default">#ff8154</color>
 
     <!--底部按钮的渐变颜色-->
     <color name="btn_left_default">#fbdc9b</color>

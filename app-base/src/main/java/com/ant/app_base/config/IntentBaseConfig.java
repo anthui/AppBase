@@ -26,6 +26,10 @@ public class IntentBaseConfig extends AppBaseConfig {
     public static String KEY_OBJECT_DATA = "object_data";
     //默认传递的 页面类型 key
     public static String KEY_PAGE_TYPE = "PAGE_TYPE";
+    public static String KEY_jiange= "jiange";
+    public static String KEY_jiange_num = "num";
+    public static String KEY_jiange_time = "time";
+    public static String KEY_moren = "moren";
 
 
 }

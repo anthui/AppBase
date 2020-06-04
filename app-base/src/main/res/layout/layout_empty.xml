@@ -41,11 +41,9 @@
         android:layout_marginTop="10dip"
         android:gravity="center_horizontal"
         android:text="没有数据"
-        android:textColor="@color/font_gray_default"
+        android:textColor="@color/font_black_default"
         android:textSize="15sp"
         android:visibility="visible" />
-
-
 
 
 </LinearLayout>
