@@ -11,11 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.MutableLiveData;
 
 import com.ant.anttestlibrary.R;
 import com.ant.app_base.baseDialog.BaseDialog;
 import com.ant.app_utils.CommonUtils;
 import com.ant.app_utils.LogUtil;
+import com.ant.modul.leak.LeakActivity;
 
 /**
  * copyright：
@@ -27,7 +30,12 @@ import com.ant.app_utils.LogUtil;
 public class InputDialog extends BaseDialog implements ViewTreeObserver.OnGlobalLayoutListener, View.OnClickListener {
 
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        LogUtil.e("===============================onActivityCreated");
 
+    }
 
     private EditText editText;
     private TextView tvSend;
@@ -35,6 +43,27 @@ public class InputDialog extends BaseDialog implements ViewTreeObserver.OnGlobal
     private String hintText = "说点什么...";
 
     private String inputText = "";
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LogUtil.e("======================= onCreate ");
+
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        LogUtil.e("======================= 创建时间===  " + (System.currentTimeMillis() - LeakActivity.time));
+
+    }
+
+    @Override
+    public void onDismiss(@NonNull DialogInterface dialog) {
+        super.onDismiss(dialog);
+        LogUtil.e("======================= onDismiss ");
+    }
 
 
     /**
@@ -63,6 +92,7 @@ public class InputDialog extends BaseDialog implements ViewTreeObserver.OnGlobal
     public int getMainContentViewId() {
         setDimAmount(0.3f);
         setShowBottom(true);
+        setOutCancel(true);
         return R.layout.layout_input;
     }
 
@@ -114,10 +144,13 @@ public class InputDialog extends BaseDialog implements ViewTreeObserver.OnGlobal
     }
 
 
+    public MutableLiveData<Boolean> isDestroy = new MutableLiveData<Boolean>();
+
     @Override
     public void onDestroy() {
         super.onDestroy();
         setOnGlobalLayoutListener(false);
+        isDestroy.setValue(true);
     }
 
     @Override

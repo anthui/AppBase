@@ -14,7 +14,6 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.annotation.StyleRes;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -236,6 +235,12 @@ public abstract class BaseDialog extends DialogFragment implements BaseViewInter
         if (getDialog() != null && getDialog().isShowing()) {
             LogUtil.e("msg========    lanjie");
 
+            return this;
+        }
+
+
+        LogUtil.e("==================== " + isAdded());
+        if (isAdded()) {
             return this;
         }
 
